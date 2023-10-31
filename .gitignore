@@ -1,3 +1,5 @@
+**/__pycache__/
+
 data/
 lib/ner/old/
 model_evaluation/ner/plots/
