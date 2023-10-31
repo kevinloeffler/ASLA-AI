@@ -1,0 +1,8 @@
+data/
+lib/new/old/
+models/
+nachlaesse/
+stuff/
+venv/
+
+config.toml
