@@ -20,8 +20,8 @@ class SpacyModel(AbstractModel):
     ########## TRAINING ##########
 
     def train(self, iterations: int, with_training_csv: str, safe_to: str = '') -> list:
-
         print(f'Loading model: "{self.model_name}"')
+        spacy.require_gpu()
         model = spacy.load(self.model_name)
         pipeline = model.get_pipe('ner')
 
