@@ -1,5 +1,6 @@
 data/
-lib/new/old/
+lib/ner/old/
+model_evaluation/ner/plots/
 models/
 nachlaesse/
 stuff/
