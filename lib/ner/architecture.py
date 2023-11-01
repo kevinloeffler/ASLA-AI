@@ -114,82 +114,75 @@ class AbstractModel(ABC):
 
     @staticmethod
     def safe_predictions_to_csv(to: str, prediction_results: list[PredictionResult]):
-        with open(to, 'x') as file:
-            writer = csv.writer(file)
-            writer.writerow(['title', 'accuracy', 'entity_accuracy', 'predictions', 'targets'])
-
-            for prediction in prediction_results:
-                writer.writerow([prediction.text,
-                                 prediction.accuracy,
-                                 prediction.entity_accuracy,
-                                 prediction.predictions,
-                                 prediction.entities])
+        return safe_predictions_to_csv(to, prediction_results)
 
     def evaluate_prediction(self, fragment: Fragment, predicted_entities: list[Entity]) -> PredictionResult:
-        prediction_result = PredictionResult(accuracy=None,
-                                             entity_accuracy={},
-                                             text=fragment.text,
-                                             entities=fragment.entities,
-                                             predictions=predicted_entities)
-        accuracies = []
+        return evaluate_prediction(fragment, predicted_entities)
 
-        labels = set([p.label.name for p in predicted_entities] + [e.label.name for e in fragment.entities])
-        for label in labels:
-            targets = list(filter(lambda e: e.label.name == label, fragment.entities))
-            predictions = list(filter(lambda p: p.label.name == label, predicted_entities))
-            accuracy = self.__compare_prediction_to_target(text=fragment.text, target=targets, prediction=predictions)
-            if accuracy is not None:
-                accuracies.append(accuracy)
-                prediction_result.entity_accuracy[label] = accuracy
 
-        if not len(accuracies) == 0:
-            prediction_result.accuracy = sum(accuracies) / len(accuracies)
+##########
 
-        return prediction_result
+def evaluate_prediction(fragment: Fragment, predicted_entities: list[Entity]) -> PredictionResult:
+    prediction_result = PredictionResult(accuracy=None,
+                                         entity_accuracy={},
+                                         text=fragment.text,
+                                         entities=fragment.entities,
+                                         predictions=predicted_entities)
+    accuracies = []
 
-    @staticmethod
-    def __compare_prediction_to_target(text: str, target: list[Entity], prediction: list[Entity]) -> float | None:
-        delimiters = '\s|,|:|;|/'
+    labels = set([p.label.name for p in predicted_entities] + [e.label.name for e in fragment.entities])
+    for label in labels:
+        targets = list(filter(lambda e: e.label.name == label, fragment.entities))
+        predictions = list(filter(lambda p: p.label.name == label, predicted_entities))
+        accuracy = compare_prediction_to_target(target=targets, prediction=predictions)
+        if accuracy is not None:
+            accuracies.append(accuracy)
+            prediction_result.entity_accuracy[label] = accuracy
 
-        tokenized_target = list(filter(
-            lambda el: el != '', re.split(delimiters, ' '.join([t.text for t in target]))))
+    if not len(accuracies) == 0:
+        prediction_result.accuracy = sum(accuracies) / len(accuracies)
 
-        tokenized_prediction = list(filter(
-            lambda el: el != '', re.split(delimiters, ' '.join([p.text for p in prediction]))))
+    return prediction_result
 
-        total_tokens = len(tokenized_target)
-        correct_tokens = 0
-        incorrect_tokens = 0
 
-        for t_target in tokenized_target:
-            if t_target in tokenized_prediction:
-                correct_tokens += 1
-                tokenized_prediction.remove(t_target)
-            else:
-                incorrect_tokens += 1
+def compare_prediction_to_target(target: list[Entity], prediction: list[Entity]) -> float | None:
+    delimiters = '\s|,|:|;|/'
 
-        incorrect_tokens += len(tokenized_prediction)
+    tokenized_target = list(filter(
+        lambda el: el != '', re.split(delimiters, ' '.join([t.text for t in target]))))
 
-        if total_tokens == 0 and incorrect_tokens == 0:
-            return None  # nothing to predict and not too much predicted
-        elif total_tokens == 0:
-            return 0.  # too much predicted
+    tokenized_prediction = list(filter(
+        lambda el: el != '', re.split(delimiters, ' '.join([p.text for p in prediction]))))
+
+    total_tokens = len(tokenized_target)
+    correct_tokens = 0
+    incorrect_tokens = 0
+
+    for t_target in tokenized_target:
+        if t_target in tokenized_prediction:
+            correct_tokens += 1
+            tokenized_prediction.remove(t_target)
         else:
-            return max(0., (correct_tokens - incorrect_tokens) / total_tokens)
+            incorrect_tokens += 1
 
-        '''
-        target_array = np.zeros(len(text), dtype='int')
-        for entity in target:
-            target_array[entity.start_index: entity.end_index] = 1
+    incorrect_tokens += len(tokenized_prediction)
 
-        prediction_array = np.zeros(len(text), dtype='int')
-        for pred in prediction:
-            start_index = text.find(pred.text)
-            if start_index < 0:
-                continue
-            prediction_array[start_index: start_index + len(pred.text)] = 1
+    if total_tokens == 0 and incorrect_tokens == 0:
+        return None  # nothing to predict and not too much predicted
+    elif total_tokens == 0:
+        return 0.  # too much predicted
+    else:
+        return max(0., (correct_tokens - incorrect_tokens) / total_tokens)
 
-        xor_array = [a ^ b for a, b in zip(prediction_array, target_array)]
-        correct_chars = xor_array.count(0)
-        return correct_chars / len(text)
-        '''
+
+def safe_predictions_to_csv(to: str, prediction_results: list[PredictionResult]):
+    with open(to, 'x') as file:
+        writer = csv.writer(file)
+        writer.writerow(['title', 'accuracy', 'entity_accuracy', 'predictions', 'targets'])
+
+        for prediction in prediction_results:
+            writer.writerow([prediction.text,
+                             prediction.accuracy,
+                             prediction.entity_accuracy,
+                             prediction.predictions,
+                             prediction.entities])
