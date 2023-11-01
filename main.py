@@ -16,6 +16,10 @@ if __name__ == '__main__':
         except KeyError:
             print('ERROR: missing config key: paths.models')
             quit(1)
+        try:
+            config['number_of_gpus']
+        except KeyError:
+            print('ERROR: missing config key: number_of_gpus')
 
     evaluate_transformer_model(config)
 
