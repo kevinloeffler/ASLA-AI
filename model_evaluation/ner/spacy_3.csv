@@ -1,0 +1,240 @@
+title,accuracy,entity_accuracy,predictions,targets
+Schnitt durch Terrasse,,{},[],[]
+Maisonette / Sandspielplatz,0.0,{'LOC': 0.0},"[Entity(""Maisonette /"", LOC, (0,12))]",[]
+Profilplan,,{},[],[]
+Überbauung in der Au / ohne Titel,0.0,{'LOC': 0.0},[],"[Entity(""Au"", LOC, (18,20))]"
+Bassin,0.0,{'LOC': 0.0},"[Entity(""Bassin"", LOC, (0,6))]",[]
+Garten / Projekt,,{},"[Entity(""/"", PER, (7,8))]",[]
+ohne Titel,,{},[],[]
+"Schürmann, Herrn Dr. Richard / ohne Titel",0.0,{'PER': 0.0},"[Entity(""Dr. Richard / ohne Titel"", PER, (17,41))]","[Entity(""Schürmann, Herrn Dr. Richard"", PER, (0,28))]"
+Wirkung bei verschiedenen Wassermengen,,{},[],[]
+Umgebungsarbeiten,,{},[],[]
+Umgebung,,{},[],[]
+Töchterschule Riesbach / ohne Titel,,{},[],[]
+Bepflanzungsvorschlag,,{},[],[]
+Badebassin / Schnitt Ansichten,0.0,{'LOC': 0.0},"[Entity(""Badebassin /"", LOC, (0,12))]",[]
+"von Lick, Herrn",0.3333333333333333,{'PER': 0.3333333333333333},"[Entity(""Lick"", PER, (4,8)), Entity("", Herrn"", PER, (8,15))]","[Entity(""von Lick, Herrn"", PER, (0,15))]"
+Gestaltung der Umgebung,,{},[],[]
+"Simmen-Schwyzer, Herrn H. / ohne Titel",0.0,{'PER': 0.0},[],"[Entity(""Simmen-Schwyzer, Herrn H."", PER, (0,25))]"
+Planskizze,,{},[],[]
+Pergolapfosten,,{},[],[]
+Wettbewerb,,{},[],[]
+Wasserschöpfbrunnen,0.0,{'LOC': 0.0},"[Entity(""Wasserschöpfbrunnen"", LOC, (0,19))]",[]
+Garage-Anbau,0.0,{'LOC': 0.0},"[Entity(""Garage-Anbau"", LOC, (0,12))]",[]
+Gartengrundriss,0.0,{'LOC': 0.0},"[Entity(""Gartengrundriss"", LOC, (0,15))]",[]
+Friedhof Wangen,1.0,{'LOC': 1.0},"[Entity(""Wangen"", LOC, (9,15))]","[Entity(""Wangen"", LOC, (9,15))]"
+Wettbewerb / Sportanlage Situation,0.0,{'LOC': 0.0},"[Entity(""Situation"", LOC, (25,34))]",[]
+Conditorei - Tee Raum / Gartenterrasse / Grundriss,0.0,{'LOC': 0.0},"[Entity(""Conditorei - Tee Raum"", LOC, (0,21)), Entity(""/"", LOC, (22,23))]",[]
+Umgebung 2. Bauetappe,0.0,{'LOC': 0.0},"[Entity(""Bauetappe"", LOC, (12,21))]",[]
+Profile 2. Etappe,0.0,{'LOC': 0.0},"[Entity(""Etappe"", LOC, (11,17))]",[]
+Umgebung,,{},[],[]
+Kirche Bettlach,1.0,{'LOC': 1.0},"[Entity(""Bettlach"", LOC, (7,15))]","[Entity(""Bettlach"", LOC, (7,15))]"
+Ausführung / ohne Titel,,{},[],[]
+ohne Titel,,{},[],[]
+Personalhaus,,{},[],[]
+Farbgebung an Wänden,0.0,{'LOC': 0.0},"[Entity(""Farbgebung an Wänden"", LOC, (0,20))]",[]
+ohne Titel,,{},[],[]
+Details öffentlicher Brunnen / ohne Titel,,{},[],[]
+Sitzbänke aus Granit Detailplan,0.0,{'LOC': 0.0},"[Entity(""Detailplan"", LOC, (21,31))]",[]
+Eingangshof Detail,0.0,{'LOC': 0.0},"[Entity(""Detail"", LOC, (12,18))]",[]
+ohne Titel,,{},[],[]
+Bepflanzung Hof,,{},[],[]
+Aussenbeleuchtung,,{},[],[]
+"Golfclub Patriziale, Ascona / ohne Titel",0.0,{'LOC': 0.0},"[Entity(""Ascona / ohne Titel"", LOC, (21,40))]",[]
+Cramer / diverse Negative,0.0,{'PER': 0.0},[],"[Entity(""Cramer"", PER, (0,6))]"
+"Burchard, Frau E.",0.0,"{'PER': 0.0, 'LOC': 0.0}","[Entity(""Burchard"", PER, (0,8)), Entity(""Frau"", LOC, (10,14))]","[Entity(""Burchard, Frau E."", PER, (0,17))]"
+Freies Gymnasium,0.0,{'LOC': 0.0},"[Entity(""Gymnasium"", LOC, (7,16))]",[]
+Schulgarten,,{},[],[]
+Treppe Entfelderstrasse - Hauptplatz,0.0,{'LOC': 0.0},"[Entity(""- Hauptplatz"", LOC, (24,36))]","[Entity(""Entfelderstrasse"", LOC, (7,23))]"
+Umgebung,,{},[],[]
+Garagenzufahrt,0.0,{'LOC': 0.0},"[Entity(""Garagenzufahrt"", LOC, (0,14))]",[]
+Garagenzufahrt,0.0,{'LOC': 0.0},"[Entity(""Garagenzufahrt"", LOC, (0,14))]",[]
+Altersbauten Spitalackerpark / Erdgeschoss Situation,0.0,{'LOC': 0.0},"[Entity(""Spitalackerpark /"", LOC, (13,30)), Entity(""Situation"", LOC, (43,52))]","[Entity(""Spitalackerpark"", LOC, (13,28))]"
+"Proebster, Herrn Dr. W.E.",0.5,{'PER': 0.5},"[Entity("", Herrn Dr. W.E."", PER, (9,25))]","[Entity(""Proebster, Herrn Dr. W.E."", PER, (0,25))]"
+Dias Überbauung Homberg,0.0,{'LOC': 0.0},"[Entity(""Dias Überbauung Homberg"", LOC, (0,23))]","[Entity(""Homberg"", LOC, (16,23))]"
+Kirchengemeindezentrum Töss,1.0,{'LOC': 1.0},"[Entity(""Töss"", LOC, (23,27))]","[Entity(""Töss"", LOC, (23,27))]"
+"Hischmann, Herrn R.",0.0,{'PER': 0.0},[],"[Entity(""Hischmann, Herrn R."", PER, (0,19))]"
+Friedhof und Kirche Fehraltorf / ohne Titel,0.0,{'LOC': 0.0},"[Entity(""Fehraltorf / ohne Titel"", LOC, (20,43))]","[Entity(""Fehraltorf"", LOC, (20,30))]"
+Neue Terraingestaltung,,{},[],[]
+Lehrerinnenseminar Bernarda,1.0,{'LOC': 1.0},"[Entity(""Bernarda"", LOC, (19,27))]","[Entity(""Bernarda"", LOC, (19,27))]"
+Dibona AG,0.0,{'LOC': 0.0},"[Entity(""Dibona"", LOC, (0,6))]",[]
+ohne Titel,,{},[],[]
+ohne Titel,,{},[],[]
+"Hodel, Herrn J.",0.0,{'PER': 0.0},[],"[Entity(""Hodel, Herrn J."", PER, (0,15))]"
+Post Vaduz,0.0,{'LOC': 0.0},"[Entity(""Post Vaduz"", LOC, (0,10))]","[Entity(""Vaduz"", LOC, (5,10))]"
+Abänderung Vorschlag B 1,,{},[],[]
+"Spirig, Herrn Dr. Hugo",0.25,"{'PER': 0.5, 'LOC': 0.0}","[Entity(""Spirig"", LOC, (0,6)), Entity("", Herrn Dr. Hugo"", PER, (6,22))]","[Entity(""Spirig, Herrn Dr. Hugo"", PER, (0,22))]"
+Gartengrundriss,0.0,{'LOC': 0.0},"[Entity(""Gartengrundriss"", LOC, (0,15))]",[]
+"Rohr, Herrn W.",0.0,"{'PER': 0.0, 'LOC': 0.0}","[Entity(""Rohr"", LOC, (0,4))]","[Entity(""Rohr, Herrn W."", PER, (0,14))]"
+Projektierungsgrundlage für eine Abdankungshalle,,{},[],[]
+Landhaus / Hofgestaltung + Kanalisation,0.0,{'LOC': 0.0},"[Entity(""Landhaus"", LOC, (0,8))]",[]
+Granittisch 2 Konsolen,0.0,{'LOC': 0.0},"[Entity(""Konsolen"", LOC, (14,22))]",[]
+ohne Titel,,{},[],[]
+Bank aus Mägenwiler Muschelkalk,0.0,{'LOC': 0.0},"[Entity(""Muschelkalk"", LOC, (20,31))]",[]
+Ansicht West / Süd,,{},[],[]
+Schnitt,,{},[],[]
+ohne Titel,,{},[],[]
+Rationeller Wohnungs und Siedlungsbau / Neupflanzung / Pflanzschema,0.0,{'LOC': 0.0},"[Entity(""Wohnungs und Siedlungsbau"", LOC, (12,37))]",[]
+Gartengrundriss,0.0,{'LOC': 0.0},"[Entity(""Gartengrundriss"", LOC, (0,15))]",[]
+Grabpflanzung / Waldfriedhof Schaffhausen,1.0,{'LOC': 1.0},"[Entity(""Schaffhausen"", LOC, (29,41))]","[Entity(""Schaffhausen"", LOC, (29,41))]"
+,,{},[],[]
+,,{},[],[]
+Garten des Herrn Hans Löw-Villars Oberaach Detailplan für Plattenwege im Schattengarten,0.0,"{'PER': 0.0, 'LOC': 0.0}","[Entity(""des Herrn Hans Löw-Villars Oberaach Detailplan"", PER, (7,53))]","[Entity(""Herrn Hans Löw-Villars"", PER, (11,33)), Entity(""Oberaach"", LOC, (34,42))]"
+Bauplatz Franzoni,0.0,{'PER': 0.0},[],"[Entity(""Franzoni"", PER, (9,17))]"
+"Projekt für die Gartenanlage des Herrn Direktor, Fessler- u. Muralt, Zürich",0.0,"{'PER': 0.0, 'LOC': 0.0}","[Entity(""des Herrn Direktor"", PER, (29,47)), Entity(""Fessler- u. Muralt"", LOC, (49,67)), Entity(""Zürich"", LOC, (69,75))]","[Entity(""Herrn Direktor, Fessler- u. Muralt"", PER, (33,67)), Entity(""Zürich"", LOC, (69,75))]"
+Garten des Herrn H. Löw Oberaach Bepflanzung des Vorgartens,0.0,"{'PER': 0.0, 'LOC': 0.0}","[Entity(""des Herrn H. Löw Oberaach Bepflanzung"", PER, (7,44)), Entity(""Vorgartens"", LOC, (49,59))]","[Entity(""Herrn H. Löw"", PER, (11,23)), Entity(""Oberaach"", LOC, (24,32))]"
+"Evang. Kirchgemeinde Romanshorn, Pfarrgarten 3, Vorschlag für die Umgestaltung",0.0,{'LOC': 0.0},"[Entity(""Romanshorn"", LOC, (21,31)), Entity(""Pfarrgarten 3"", LOC, (33,46))]","[Entity(""Romanshorn"", LOC, (21,31))]"
+Grundrissskizze,,{},[],[]
+"Garten des Herrn Ad, Rüdisüli-Bruderer, Bühler, Vorschlag für den Hausgarten",0.125,"{'PER': 0.25, 'LOC': 0.0}","[Entity(""des Herrn Ad"", PER, (7,19)), Entity(""Rüdisüli-Bruderer"", PER, (21,38)), Entity(""Bühler"", LOC, (40,46))]","[Entity(""Herrn Ad, Rüdisüli-Bruderer, Bühler"", PER, (11,46))]"
+"Landhaus von Herrn Max Schmidheiny-Glarner, Heerbrugg, Südfassade mit neuer Terrasse",1.0,"{'PER': 1.0, 'LOC': 1.0}","[Entity(""Max Schmidheiny-Glarner"", PER, (19,42)), Entity(""Heerbrugg"", LOC, (44,53))]","[Entity(""Max Schmidheiny-Glarner"", PER, (19,42)), Entity(""Heerbrugg"", LOC, (44,53))]"
+Grundrissskizze,,{},[],[]
+"Garten des Herrn Dir. Griesser Aadorf, Bepflanzungsvorschlag für die Staudenrabatten",0.5,"{'PER': 0.0, 'LOC': 1.0}","[Entity(""des Herrn Dir."", PER, (7,21)), Entity(""Aadorf"", LOC, (31,37))]","[Entity(""Herrn Dir. Griesser"", PER, (11,30)), Entity(""Aadorf"", LOC, (31,37))]"
+"Skizze, Garten des Herrn Dr. H. Mötteli",0.0,"{'PER': 0.0, 'LOC': 0.0}","[Entity(""des Herrn Dr."", PER, (15,28)), Entity(""Mötteli"", LOC, (32,39))]","[Entity(""Herrn Dr. H. Mötteli"", PER, (19,39))]"
+"Garten des Herrn Dr. med. H. Odermatt, in Goldach, St. Gallen",0.3333333333333333,"{'PER': 0.0, 'LOC': 0.6666666666666666}","[Entity(""des Herrn Dr. med."", PER, (7,25)), Entity(""Odermatt"", LOC, (29,37)), Entity(""Goldach"", LOC, (42,49)), Entity(""St. Gallen"", LOC, (51,61))]","[Entity(""Herrn Dr. med. H. Odermatt"", PER, (11,37)), Entity(""Goldach, St. Gallen"", LOC, (42,61))]"
+"Garten von Frau Möriköfer-Müller Romanshorn, Arbeitsplan",0.25,"{'PER': 0.5, 'LOC': 0.0}","[Entity(""Frau Möriköfer-Müller Romanshorn"", PER, (11,43))]","[Entity(""Frau Möriköfer-Müller"", PER, (11,32)), Entity(""Romanshorn"", LOC, (33,43))]"
+"Schloss Heerbrugg, Ideenskizze für die Abänderung beim Badegarten",0.0,{'LOC': 0.0},"[Entity(""Heerbrugg"", LOC, (8,17))]",[]
+"Garten des Hrn. A. jetter, Rorschacherberg, Mauer- und Treppenpartie Ostseite",0.0,"{'PER': 0.0, 'LOC': 0.0}","[Entity(""des Hrn. A."", PER, (7,18)), Entity(""Rorschacherberg"", LOC, (27,42)), Entity(""Ostseite"", LOC, (69,77))]","[Entity(""Hrn. A. jetter"", PER, (11,25)), Entity(""Rorschacherberg"", LOC, (27,42))]"
+Garten des Hrn E. Chytil Rorschach Arbeitsplan,0.3333333333333333,"{'PER': 0.6666666666666666, 'LOC': 0.0}","[Entity(""des Hrn E. Chytil"", PER, (7,24))]","[Entity(""Hrn E. Chytil"", PER, (11,24)), Entity(""Rorschach"", LOC, (25,34))]"
+"Garten des Herrn Dr. Rusch-Hälg, St. Gallen, Generelles Projekt",0.3333333333333333,"{'PER': 0.6666666666666666, 'LOC': 0.0}","[Entity(""des Herrn Dr. Rusch-Hälg"", PER, (7,31)), Entity(""St. Gallen"", LOC, (33,43)), Entity(""Generelles Projekt"", LOC, (45,63))]","[Entity(""Herrn Dr. Rusch-Hälg"", PER, (11,31)), Entity(""St. Gallen"", LOC, (33,43))]"
+Aluminiumwerke A.-G. Rorschach Vorschlag 1,0.0,{'LOC': 0.0},[],"[Entity(""Rorschach"", LOC, (21,30))]"
+"Schloss Heerbrugg, Bes. Herr Oberst J. Schmidheiny, Eiserne Leiter im Bassin",0.0,"{'PER': 0.0, 'LOC': 0.0}","[Entity(""Heerbrugg"", LOC, (8,17)), Entity(""Bes."", LOC, (19,23)), Entity(""Eiserne"", LOC, (52,59))]","[Entity(""Bes. Herr Oberst J. Schmidheiny"", PER, (19,50))]"
+Garten Rorschach,1.0,{'LOC': 1.0},"[Entity(""Rorschach"", LOC, (7,16))]","[Entity(""Rorschach"", LOC, (7,16))]"
+Garten des hrn. Burkhardt Rebenstrasse Arbon,0.0,"{'PER': 0.0, 'LOC': 0.0}","[Entity(""Arbon"", LOC, (39,44))]","[Entity(""hrn. Burkhardt"", PER, (11,25)), Entity(""Rebenstrasse Arbon"", LOC, (26,44))]"
+"Vonwil - Bau AG, Wohnblock Schillerstrasse/Salistrasse St. Gallen, Skizze für Grünstrefien längs Strasse",0.0,{'LOC': 0.0},"[Entity(""Vonwil - Bau AG"", LOC, (0,15)), Entity(""Wohnblock Schillerstrasse"", LOC, (17,42)), Entity(""St. Gallen"", LOC, (55,65))]","[Entity(""Schillerstrasse/Salistrasse St. Gallen"", LOC, (27,65))]"
+Aufnahme des Fels im Bassin,0.0,{'LOC': 0.0},"[Entity(""Fels im Bassin"", LOC, (13,27))]",[]
+Schloss Heerbrugg Südterrasse mit Gartenhaus,,{},[],[]
+"Liegenschaften Mariabergstr. 39,41,43 Rorschach",0.0,{'LOC': 0.0},"[Entity(""Liegenschaften Mariabergstr"", LOC, (0,27))]","[Entity(""Mariabergstr. 39,41,43 Rorschach"", LOC, (15,47))]"
+Schlossgut Bachtobel,1.0,{'LOC': 1.0},"[Entity(""Bachtobel"", LOC, (11,20))]","[Entity(""Bachtobel"", LOC, (11,20))]"
+"Anlage des Herrn A. Raduner, Horn, Beerenobst Garten",0.3333333333333333,"{'PER': 0.6666666666666666, 'LOC': 0.0}","[Entity(""des Herrn A. Raduner"", PER, (7,27)), Entity(""Horn"", LOC, (29,33)), Entity(""Beerenobst"", LOC, (35,45))]","[Entity(""Herrn A. Raduner"", PER, (11,27)), Entity(""Horn"", LOC, (29,33))]"
+Skizze,,{},[],[]
+"Evangelische Kirche Goldach, Skizze für Mauer + Treppenpartie",0.0,{'LOC': 0.0},"[Entity(""Goldach"", LOC, (20,27)), Entity(""+ Treppenpartie"", LOC, (46,61))]","[Entity(""Goldach"", LOC, (20,27))]"
+"Evang. Kirche Goldach, Arbeitsplan für die Umgebungsarbeiten",1.0,{'LOC': 1.0},"[Entity(""Goldach"", LOC, (14,21))]","[Entity(""Goldach"", LOC, (14,21))]"
+"Herrn K. Rupprecht, Pension Eden, Rheinfelden, Vogelbassin",0.0,"{'PER': 0.0, 'LOC': 0.0}","[Entity(""K. Rupprecht"", LOC, (6,18)), Entity(""Rheinfelden"", LOC, (34,45)), Entity(""Vogelbassin"", LOC, (47,58))]","[Entity(""Herrn K. Rupprecht"", PER, (0,18)), Entity(""Rheinfelden"", LOC, (34,45))]"
+"Hr. Roller-Winkler, Turbenthal, Bassin",0.5,"{'PER': 1.0, 'LOC': 0.0}","[Entity(""Hr. Roller-Winkler"", PER, (0,18)), Entity(""Turbenthal"", LOC, (20,30)), Entity(""Bassin"", LOC, (32,38))]","[Entity(""Hr. Roller-Winkler"", PER, (0,18)), Entity(""Turbenthal"", LOC, (20,30))]"
+"Liegenschaften: Boller-Winkler, Winkler-Heene",0.0,{'LOC': 0.0},"[Entity(""Liegenschaften: Boller-Winkler"", LOC, (0,30)), Entity(""Winkler-Heene"", LOC, (32,45))]",[]
+C. Stürm + CO. AG Rorschach / Vorschlag für den Landabtausch zwischen den Parzellen 1593 + 1594,0.0,"{'PER': 0.0, 'LOC': 0.0}","[Entity(""C. Stürm + CO."", LOC, (0,14)), Entity(""Rorschach /"", LOC, (18,29)), Entity(""1593 + 1594"", LOC, (84,95))]","[Entity(""C. Stürm + CO. AG"", PER, (0,17)), Entity(""Rorschach"", LOC, (18,27))]"
+"Friedhofanlage bei der Kath. Pfarrkirche, Rorschach, Vorschlag 3",0.0,{'LOC': 0.0},"[Entity(""Rorschach"", LOC, (42,51)), Entity(""Vorschlag 3"", LOC, (53,64))]","[Entity(""Rorschach"", LOC, (42,51))]"
+"Gartenanlage des Herrn Hpt. Straub, Amriswil",0.8333333333333333,"{'PER': 0.6666666666666666, 'LOC': 1.0}","[Entity(""des Herrn Hpt."", PER, (13,27)), Entity(""Straub"", PER, (28,34)), Entity(""Amriswil"", LOC, (36,44))]","[Entity(""Herrn Hpt. Straub"", PER, (17,34)), Entity(""Amriswil"", LOC, (36,44))]"
+Skizze,,{},[],[]
+"Kanton Thurgau, Stadt Kreuzlingen, Ausbau Hauptstrasse, Liegenschaften Sanatorium Bellevue AG, Anpassungsarbeiten / Genereller Vorschlag, M. 1:200",0.0,{'LOC': 0.0},"[Entity(""Kanton Thurgau"", LOC, (0,14)), Entity(""Kreuzlingen"", LOC, (22,33)), Entity(""Ausbau Hauptstrasse"", LOC, (35,54)), Entity(""Liegenschaften Sanatorium Bellevue AG"", LOC, (56,93)), Entity(""Anpassungsarbeiten /"", LOC, (95,115)), Entity(""Vorschlag"", LOC, (127,136))]","[Entity(""Kanton Thurgau, Stadt Kreuzlingen, Ausbau Hauptstrasse"", LOC, (0,54))]"
+Skizze Kaufmann Laufenburg ,0.0,{'LOC': 0.0},"[Entity(""Laufenburg"", LOC, (16,26))]",[]
+Skizze,,{},[],[]
+"Friedhof Rheineck, Urnenfeld, Bepflanzungsplan",0.0,{'LOC': 0.0},"[Entity(""Rheineck"", LOC, (9,17)), Entity(""Urnenfeld, Bepflanzungsplan"", LOC, (19,46))]","[Entity(""Rheineck"", LOC, (9,17))]"
+Skizze,,{},[],[]
+,,{},[],[]
+"Friedhoferweiterung Rheineck, Schmiedeisernes Tor",0.0,"{'PER': 0.0, 'LOC': 0.0}","[Entity(""Rheineck"", PER, (20,28)), Entity(""Schmiedeisernes Tor"", LOC, (30,49))]","[Entity(""Rheineck"", LOC, (20,28))]"
+"Gartetn des Hrn. Dir. L. Sauter Ermatingen, Arbeitsplan",0.0,"{'PER': 0.0, 'LOC': 0.0}","[Entity(""des Hrn."", PER, (8,16)), Entity(""Dir."", LOC, (17,21)), Entity(""Ermatingen"", LOC, (32,42))]","[Entity(""Hrn. Dir. L. Sauter"", PER, (12,31)), Entity(""Ermatingen"", LOC, (32,42))]"
+"Garten des Herrn E. Wüthrich, Steinebrunn, Bepflanzungsplan für das Rosenbeet",0.8333333333333333,"{'PER': 0.6666666666666666, 'LOC': 1.0}","[Entity(""des Herrn E. Wüthrich"", PER, (7,28)), Entity(""Steinebrunn"", LOC, (30,41))]","[Entity(""Herrn E. Wüthrich"", PER, (11,28)), Entity(""Steinebrunn"", LOC, (30,41))]"
+Grundrissskizze,,{},[],[]
+Grundrissskizze,,{},[],[]
+"Herrn Dir. L. Sauter Ermatingen, Skizze der Einfahrts-Partie",0.0,"{'PER': 0.0, 'LOC': 0.0}","[Entity(""Dir."", LOC, (6,10)), Entity(""Ermatingen"", LOC, (21,31))]","[Entity(""Herrn Dir. L. Sauter"", PER, (0,20)), Entity(""Ermatingen"", LOC, (21,31))]"
+Skizze,,{},[],[]
+"Bahnhofpark Appenzell, Bepflanzung der Grünanlage vor der Bank",1.0,{'LOC': 1.0},"[Entity(""Appenzell"", LOC, (12,21))]","[Entity(""Appenzell"", LOC, (12,21))]"
+"Garten des Herrn Dir. Satuer Mannenbach, Bepflanzung für den Blumengarten",0.5,"{'PER': 0.0, 'LOC': 1.0}","[Entity(""des Herrn Dir."", PER, (7,21)), Entity(""Mannenbach"", LOC, (29,39))]","[Entity(""Herrn Dir. Satuer"", PER, (11,28)), Entity(""Mannenbach"", LOC, (29,39))]"
+"Garten des Hrn. H. Kürschner St. Gallen, Plattenbelag beim Sitzplatz auf der Ostseite",0.0,"{'PER': 0.0, 'LOC': 0.0}","[Entity(""des Hrn. H. Kürschner St. Gallen"", PER, (7,39))]","[Entity(""Hrn. H. Kürschner"", PER, (11,28)), Entity(""St. Gallen"", LOC, (29,39))]"
+"Herrn O. Konrad, Hotel Bahnhof, Romanshorn, Gartenwirtschaft",0.5,"{'PER': 0.0, 'LOC': 1.0}","[Entity(""Konrad"", PER, (9,15)), Entity(""Hotel Bahnhof"", LOC, (17,30)), Entity(""Romanshorn"", LOC, (32,42))]","[Entity(""Herrn O. Konrad"", PER, (0,15)), Entity(""Hotel Bahnhof, Romanshorn"", LOC, (17,42))]"
+Friedhof Salmsach Kinderfeld,0.0,{'LOC': 0.0},"[Entity(""Salmsach Kinderfeld"", LOC, (9,28))]","[Entity(""Salmsach"", LOC, (9,17))]"
+"Anstalt Bernrain, Kreuzlingen, Profile",0.0,{'LOC': 0.0},"[Entity(""Kreuzlingen"", LOC, (18,29)), Entity(""Profile"", LOC, (31,38))]","[Entity(""Kreuzlingen"", LOC, (18,29))]"
+Garten von Frau H. Biger-Egloff Biglen Umänderung der Staudenrabatte,0.0,"{'PER': 0.0, 'LOC': 0.0}","[Entity(""Frau"", PER, (11,15)), Entity(""Biger-Egloff"", LOC, (19,31))]","[Entity(""Frau H. Biger-Egloff"", PER, (11,31)), Entity(""Biglen"", LOC, (32,38))]"
+Schulhaus Kirchberg,1.0,{'LOC': 1.0},"[Entity(""Kirchberg"", LOC, (10,19))]","[Entity(""Kirchberg"", LOC, (10,19))]"
+"Grünanlage + Kinderspielplatz Weiher, Arbon",0.0,{'LOC': 0.0},"[Entity(""+ Kinderspielplatz Weiher"", LOC, (11,36)), Entity(""Arbon"", LOC, (38,43))]","[Entity(""Arbon"", LOC, (38,43))]"
+"Gemeinde Wattwil / Liegenschaft Schönegg, Skizze für den Plattenbelag / Sitzplatz, Blumengarten",0.0,{'LOC': 0.0},"[Entity(""Wattwil /"", LOC, (9,18)), Entity(""Schönegg"", LOC, (32,40)), Entity(""Blumengarten"", LOC, (83,95))]","[Entity(""Wattwil"", LOC, (9,16))]"
+Strandbad Hörnli Kreuzlingen,1.0,{'LOC': 1.0},"[Entity(""Kreuzlingen"", LOC, (17,28))]","[Entity(""Kreuzlingen"", LOC, (17,28))]"
+Skizze,,{},[],[]
+"St.Gallische Austellung Abteil, Gartenbau",0.0,{'LOC': 0.0},"[Entity(""Abteil"", LOC, (24,30)), Entity(""Gartenbau"", LOC, (32,41))]",[]
+Skizze,,{},[],[]
+"Garten des Hrn. O. Leutenegger Sirnach, Bepflanzung der Staudenrabatten",0.16666666666666666,"{'PER': 0.3333333333333333, 'LOC': 0.0}","[Entity(""des Hrn. O."", PER, (7,18)), Entity(""Leutenegger Sirnach"", PER, (19,38))]","[Entity(""Hrn. O. Leutenegger"", PER, (11,30)), Entity(""Sirnach"", LOC, (31,38))]"
+"Friedhof Altstätten / Kath. Teil 2. Bauetappe  Sammelschächte in Z. Steinen, Details",0.0,"{'PER': 0.0, 'LOC': 0.0}","[Entity(""Altstätten /"", LOC, (9,21)), Entity(""Sammelschächte"", PER, (47,61)), Entity(""Z. Steinen"", LOC, (65,75)), Entity(""Details"", LOC, (77,84))]","[Entity(""Altstätten"", LOC, (9,19))]"
+"Frau Schläpfer-Rothmund, Teufen, Gartengestaltung, Arbeitsplan",0.0,"{'PER': 0.0, 'LOC': 0.0}","[Entity(""Frau Schläpfer-Rothmund"", LOC, (0,23)), Entity(""Teufen"", LOC, (25,31))]","[Entity(""Frau Schläpfer-Rothmund"", PER, (0,23)), Entity(""Teufen"", LOC, (25,31))]"
+"Garten des Hrn. Locher, Oberegg, Treppensituation",0.75,"{'PER': 0.5, 'LOC': 1.0}","[Entity(""des Hrn. Locher"", PER, (7,22)), Entity(""Oberegg"", LOC, (24,31))]","[Entity(""Hrn. Locher"", PER, (11,22)), Entity(""Oberegg"", LOC, (24,31))]"
+Garten für Herrn E. Egolf - Enz Weinfelden - Magdenau,0.0,"{'PER': 0.0, 'LOC': 0.0}","[Entity(""E. Egolf - Enz Weinfelden - Magdenau"", PER, (17,53))]","[Entity(""Herrn E. Egolf"", PER, (11,25)), Entity(""Magdenau"", LOC, (45,53))]"
+"Herrn E. Huber, Vorschlag für die Umgestaltung der Gärten bei den Liegenschaften in Horn",0.6666666666666666,"{'PER': 0.3333333333333333, 'LOC': 1.0}","[Entity(""E. Huber"", PER, (6,14)), Entity(""Horn"", LOC, (84,88))]","[Entity(""Herrn E. Huber"", PER, (0,14)), Entity(""Horn"", LOC, (84,88))]"
+"Schulgemeinde Romanshorn, Vorschläge für die Pflanzung zwischen Pestalozzi und Sekundarschulhaus",1.0,{'LOC': 1.0},"[Entity(""Romanshorn"", LOC, (14,24))]","[Entity(""Romanshorn"", LOC, (14,24))]"
+Skizze,,{},[],[]
+"Garten des Herrn M. Hartmann, Heiden, Arbeitsplan",0.8333333333333333,"{'PER': 0.6666666666666666, 'LOC': 1.0}","[Entity(""des Herrn M. Hartmann"", PER, (7,28)), Entity(""Heiden"", LOC, (30,36))]","[Entity(""Herrn M. Hartmann"", PER, (11,28)), Entity(""Heiden"", LOC, (30,36))]"
+"Situationsplan, Gemeinde Turbenthal",1.0,{'LOC': 1.0},"[Entity(""Turbenthal"", LOC, (25,35))]","[Entity(""Turbenthal"", LOC, (25,35))]"
+"Garten des Herrn Max Hartmann Heiden, Genereller Vorschlag",0.16666666666666666,"{'PER': 0.3333333333333333, 'LOC': 0.0}","[Entity(""des Herrn Max Hartmann Heiden"", PER, (7,36)), Entity(""Genereller Vorschlag"", LOC, (38,58))]","[Entity(""Herrn Max Hartmann"", PER, (11,29)), Entity(""Heiden"", LOC, (30,36))]"
+"Gartenanlage des Herrn P. Schubert Uttwil, Eingang Portal",0.16666666666666666,"{'PER': 0.3333333333333333, 'LOC': 0.0}","[Entity(""des Herrn P."", PER, (13,25)), Entity(""Schubert Uttwil"", PER, (26,41)), Entity(""Eingang Portal"", LOC, (43,57))]","[Entity(""Herrn P. Schubert"", PER, (17,34)), Entity(""Uttwil"", LOC, (35,41))]"
+Grundrissskizze,,{},[],[]
+Evang. Pfarrgarten Romanshorn,0.0,{'LOC': 0.0},"[Entity(""Evang."", LOC, (0,6)), Entity(""Romanshorn"", LOC, (19,29))]","[Entity(""Romanshorn"", LOC, (19,29))]"
+"Lilienberg Ermatingen, Badgarten/Bepflanzung",0.0,{'LOC': 0.0},"[Entity(""Badgarten"", LOC, (23,32))]","[Entity(""Ermatingen"", LOC, (11,21))]"
+Villa Felice Minusio,0.0,{'LOC': 0.0},"[Entity(""Minusio"", LOC, (13,20))]",[]
+Parkanlage Hotel Uetliberg J.A. Landry,0.0,{'LOC': 0.0},"[Entity(""Hotel Uetliberg J.A. Landry"", LOC, (11,38))]","[Entity(""Uetliberg"", LOC, (17,26))]"
+"Erweiterung der Parkanlagen des Herrn E. Gessner- Heusser, Seidenfabrikant",0.125,"{'PER': 0.25, 'LOC': 0.0}","[Entity(""des Herrn E."", PER, (28,40)), Entity(""Heusser"", PER, (50,57)), Entity(""Seidenfabrikant"", LOC, (59,74))]","[Entity(""Herrn E. Gessner- Heusser"", PER, (32,57))]"
+"Erweiterung der Parkanlagen des Herrn E. Gessner- Heusser, Seidenfabrikant",0.125,"{'PER': 0.25, 'LOC': 0.0}","[Entity(""des Herrn E."", PER, (28,40)), Entity(""Heusser"", PER, (50,57)), Entity(""Seidenfabrikant"", LOC, (59,74))]","[Entity(""Herrn E. Gessner- Heusser"", PER, (32,57))]"
+Parkanlagen für Herrn Karl Sulzer-Schmid in Winterthur,0.6666666666666666,"{'PER': 0.3333333333333333, 'LOC': 1.0}","[Entity(""Karl Sulzer-Schmid"", PER, (22,40)), Entity(""Winterthur"", LOC, (44,54))]","[Entity(""Herrn Karl Sulzer-Schmid"", PER, (16,40)), Entity(""Winterthur"", LOC, (44,54))]"
+Badhaus Krämerstein,0.0,{'LOC': 0.0},"[Entity(""Krämerstein"", LOC, (8,19))]",[]
+Auf dem Kreuzbühl,,{},[],[]
+Projekt zur Umgestaltung des Hausgartens von Herrn Dir. G. Sieber-Van Oordt Balsthal,0.0,"{'PER': 0.0, 'LOC': 0.0}","[Entity(""Hausgartens"", LOC, (29,40)), Entity(""Dir."", PER, (51,55)), Entity(""Oordt Balsthal"", PER, (70,84))]","[Entity(""Herrn Dir. G. Sieber-Van Oordt"", PER, (45,75)), Entity(""Balsthal"", LOC, (76,84))]"
+Landhausgarten des Herrn v. Mehrhart Feldmeilen; Profile,0.16666666666666666,"{'PER': 0.3333333333333333, 'LOC': 0.0}","[Entity(""des Herrn v. Mehrhart Feldmeilen;"", PER, (15,48))]","[Entity(""Herrn v. Mehrhart"", PER, (19,36)), Entity(""Feldmeilen"", LOC, (37,47))]"
+ohne,,{},[],[]
+Schulhausanlage Heslibach Küsnacht,1.0,{'LOC': 1.0},"[Entity(""Küsnacht"", LOC, (26,34))]","[Entity(""Küsnacht"", LOC, (26,34))]"
+Geschäftshaus Claridenhof Zürich; Ber. Projekt für die Gestaltung des Innenhofes,0.0,{'LOC': 0.0},"[Entity(""Claridenhof"", LOC, (14,25)), Entity(""Zürich;"", LOC, (26,33)), Entity(""Innenhofes"", LOC, (70,80))]","[Entity(""Zürich"", LOC, (26,32))]"
+o.T. im Plankopf: Anlage Kirchenweg,0.0,{'LOC': 0.0},"[Entity(""Kirchenweg"", LOC, (25,35))]",[]
+Projekt zur Gestaltung des Gartens von Herrn Max de Coulon-Buess Sissach,0.125,"{'PER': 0.25, 'LOC': 0.0}","[Entity(""Max de Coulon-Buess Sissach"", PER, (45,72))]","[Entity(""Herrn Max de Coulon-Buess"", PER, (39,64)), Entity(""Sissach"", LOC, (65,72))]"
+Park Situationsplan,,{},[],[]
+Übersicht-Skizze Klausstud/ Zch-Horn/ Casino,,{},[],[]
+Neuer Friedhof Baden; Gestaltung der Waldpartie,1.0,{'LOC': 1.0},"[Entity(""Baden"", LOC, (15,20))]","[Entity(""Baden"", LOC, (15,20))]"
+Umänderung der Schmuckanlage der Genossenschaft „Freiblick „ Stüssistrasse -Ilanzstrasse Zürich,0.0,{'LOC': 0.0},"[Entity(""„Freiblick „ Stüssistrasse"", LOC, (48,74)), Entity(""Zürich"", LOC, (89,95))]","[Entity(""Ilanzstrasse Zürich"", LOC, (76,95))]"
+Sportanlage Zürichhorn,1.0,{'LOC': 1.0},"[Entity(""Zürichhorn"", LOC, (12,22))]","[Entity(""Zürichhorn"", LOC, (12,22))]"
+"Gemeinnützige Baugenossenschaft Schollenholz Bruggen St. Gallen, Wohnkolonie Haggenhalde Typ M3/4 Haus 7, 8; Garagen, Trafostat.; Projekt zur Gestaltung der Umgebung",0.0,{'LOC': 0.0},"[Entity(""Bruggen St. Gallen"", LOC, (45,63)), Entity(""Wohnkolonie Haggenhalde Typ M3/4 Haus 7"", LOC, (65,104)), Entity(""8;"", LOC, (106,108)), Entity(""Trafostat.;"", LOC, (118,129))]","[Entity(""Bruggen St. Gallen"", LOC, (45,63))]"
+Projekt zur Gestaltung des Hausgartens von Herrn Dir. H. Straub Spinnerei Langnau (auszuführend. Teil),0.0,"{'PER': 0.0, 'LOC': 0.0}","[Entity(""Hausgartens"", LOC, (27,38)), Entity(""Dir."", PER, (49,53))]","[Entity(""Herrn Dir. H. Straub"", PER, (43,63)), Entity(""Langnau"", LOC, (74,81))]"
+Sous les Curnilles Chardonne; öffentlicher Ruheplatz,,{},[],[]
+Ehrenfriedhof bei der Kapalle des zweiten Städtischen Friedhofes Berlin-Schöneberg,1.0,{'LOC': 1.0},"[Entity(""Berlin-Schöneberg"", LOC, (65,82))]","[Entity(""Berlin-Schöneberg"", LOC, (65,82))]"
+Pfirsichgarten Trunkhahn Badeanlage,0.0,{'PER': 0.0},"[Entity(""Trunkhahn"", PER, (15,24))]",[]
+Stadtpark Rüstringen,0.0,{'LOC': 0.0},[],"[Entity(""Rüstringen"", LOC, (10,20))]"
+Landsitz Ury Grunewald,0.0,{'LOC': 0.0},"[Entity(""Ury"", LOC, (9,12))]","[Entity(""Grunewald"", LOC, (13,22))]"
+Kemler Mitlödi Vorschlag E,,{},[],[]
+Friedhof Glarus Südwestliches Gräberfeld Urnenmauer ,1.0,{'LOC': 1.0},"[Entity(""Glarus"", LOC, (9,15))]","[Entity(""Glarus"", LOC, (9,15))]"
+"Jardin de Monsieur Henri Bragard, Variante 1  M 1:100",0.0,"{'PER': 0.0, 'LOC': 0.0}","[Entity(""Variante"", LOC, (34,42))]","[Entity(""Jardin de Monsieur Henri Bragard"", PER, (0,32))]"
+Bocciabahn Landhaus Feusi Glarus im Büel 1:10 / 1:20,0.0,"{'PER': 0.0, 'LOC': 0.0}","[Entity(""Glarus im"", LOC, (26,35))]","[Entity(""Feusi"", PER, (20,25)), Entity(""Glarus"", LOC, (26,32))]"
+Garten Major Zweifel-Kuhn - Netstal,0.0,"{'PER': 0.0, 'LOC': 0.0}","[Entity(""Major"", PER, (7,12)), Entity(""Zweifel-Kuhn - Netstal"", LOC, (13,35))]","[Entity(""Major Zweifel-Kuhn"", PER, (7,25)), Entity(""Netstal"", LOC, (28,35))]"
+Thomi + Franck AG Basel Neues Verwaltungsgebäude ,0.0,{'LOC': 0.0},"[Entity(""Verwaltungsgebäude"", LOC, (30,48))]",[]
+Haus Wanner-Burkhalter Basel im Sesselacker 60 Der Garten Masstab: 1:100,0.0,"{'PER': 0.0, 'LOC': 0.0}",[],"[Entity(""Wanner-Burkhalter"", PER, (5,22)), Entity(""Basel"", LOC, (23,28))]"
+Grenchen Friedhoferweiterung Geländeschnitte 1:200,0.0,{'LOC': 0.0},[],"[Entity(""Grenchen"", LOC, (0,8))]"
+Marktplatz Grenchen Bepflanzungsvorschlag 1.250,0.0,{'LOC': 0.0},"[Entity(""Bepflanzungsvorschlag"", LOC, (20,41))]","[Entity(""Grenchen"", LOC, (11,19))]"
+Gartentor,0.0,{'LOC': 0.0},"[Entity(""Gartentor"", LOC, (0,9))]",[]
+Quartierplatz Wyden Gemeinde Nunningen Vorentwurf zur Umänderung Mst. 1:100,1.0,{'LOC': 1.0},"[Entity(""Nunningen"", LOC, (29,38))]","[Entity(""Nunningen"", LOC, (29,38))]"
+Landhaus des Herrn Forter-Gleyre Garten M:1:100 Vorschlag A,0.25,"{'PER': 0.5, 'LOC': 0.0}","[Entity(""des Herrn Forter-Gleyre"", PER, (9,32)), Entity(""Vorschlag"", LOC, (48,57))]","[Entity(""Herrn Forter-Gleyre"", PER, (13,32))]"
+Garten Dr. Meisel Riehen Masstab: 1:100,1.0,{'PER': 1.0},"[Entity(""Dr. Meisel Riehen"", PER, (7,24))]","[Entity(""Dr. Meisel Riehen"", PER, (7,24))]"
+Situation 1:500 Grün 80,0.0,{'LOC': 0.0},"[Entity(""Grün"", LOC, (16,20))]",[]
+Gemeinde Münchenstein Kirchhoferweiterung Querschnitte 1:100,1.0,{'LOC': 1.0},"[Entity(""Münchenstein"", LOC, (9,21))]","[Entity(""Münchenstein"", LOC, (9,21))]"
+Grünanlage Dreispitz Sanierung Spülweiher Reinacherstrasse Einfriedung der Schächte in der nördlichen Ecke des Spülweihers Mst. 1:10,0.0,"{'PER': 0.0, 'LOC': 0.0}","[Entity(""Dreispitz"", LOC, (11,20)), Entity(""Spülweihers Mst"", PER, (111,126))]","[Entity(""Reinacherstrasse"", LOC, (42,58))]"
+Jardin de Mr Nicolas Hasson Boulevard Léon Gambetta Mulhouse echelle: 1:100 Korrigierte Fassung,0.0,"{'PER': 0.0, 'LOC': 0.0}","[Entity(""Gambetta"", LOC, (43,51))]","[Entity(""Jardin de Mr Nicolas Hasson"", PER, (0,27))]"
+Friedhoferweiterung Engelberg Lageplan 1:200,0.0,{'PER': 0.0},"[Entity(""Engelberg Lageplan"", PER, (20,38))]",[]
+"Bibliothek der GGG Basel, Neuweilerstrasse 67 Vorschlag Bepflanzung Vorgarten 1:50",0.0,"{'PER': 0.0, 'LOC': 0.0}","[Entity(""Basel"", PER, (19,24)), Entity(""67 Vorschlag"", LOC, (43,55))]","[Entity(""Basel"", LOC, (19,24))]"
+Volksgarten Wettbewerb Parkanlage Holderstüdeli Situation 1:200,0.0,{'LOC': 0.0},"[Entity(""Holderstüdeli Situation"", LOC, (34,57))]",[]
+n/A,0.0,{'LOC': 0.0},"[Entity(""n/"", LOC, (0,2))]",[]
+F. Spälti Villa Hochwart Glarus Erneuerung des Gartens 1:100,0.0,"{'PER': 0.0, 'LOC': 0.0}","[Entity(""Spälti"", PER, (3,9)), Entity(""Hochwart Glarus"", LOC, (16,31))]","[Entity(""F. Spälti"", PER, (0,9)), Entity(""Glarus"", LOC, (25,31))]"
+M.Rene Haessler Soultzbach Wohngarten-Lageplan 1:50,0.5,"{'PER': 0.0, 'LOC': 1.0}","[Entity(""Soultzbach"", LOC, (16,26))]","[Entity(""M.Rene Haessler"", PER, (0,15)), Entity(""Soultzbach"", LOC, (16,26))]"
+"Doppelmehrfamilienhaus ""Kipfe"" Glarus Der Garten Masstab: 1:100",0.0,{'LOC': 0.0},"[Entity(""Doppelmehrfamilienhaus ""Kipfe"""", LOC, (0,30))]","[Entity(""Glarus"", LOC, (31,37))]"
+Garten Fabrikant Ferber Zürich 7 Masstab: 1:100,0.0,"{'PER': 0.0, 'LOC': 0.0}","[Entity(""Fabrikant"", PER, (7,16)), Entity(""Zürich"", LOC, (24,30)), Entity(""7"", LOC, (31,32))]","[Entity(""Zürich"", LOC, (24,30))]"
+Garten C Sonderpläne,0.0,{'LOC': 0.0},"[Entity(""Sonderpläne"", LOC, (9,20))]",[]
+Garten C Massenberechnungen,0.0,{'LOC': 0.0},"[Entity(""Massenberechnungen"", LOC, (9,27))]",[]
+Gartenanlage Chalet-Neubau Therma AG Schwanden 1:200,0.0,{'LOC': 0.0},"[Entity(""Chalet-Neubau Therma AG Schwanden"", LOC, (13,46))]",[]
+Altersheim Glarus Vorschlag zur Gestaltung der Gartenanlage 1:100,1.0,{'LOC': 1.0},"[Entity(""Glarus"", LOC, (11,17))]","[Entity(""Glarus"", LOC, (11,17))]"
+Basler Kunstverein Gartenhof Steinenberg 7 Variante,0.0,{'LOC': 0.0},"[Entity(""Steinenberg 7"", LOC, (29,42))]",[]
+Wohnhaus Schwörstadterstrasse Basel Gartengestaltung M: 1:100 Vorschlag A,0.0,{'LOC': 0.0},"[Entity(""Vorschlag"", LOC, (62,71))]","[Entity(""Schwörstadterstrasse Basel"", LOC, (9,35))]"
+Jardin Rinck Mulhouse 1:100 Vorschlag 2,0.0,"{'PER': 0.0, 'LOC': 0.0}","[Entity(""Vorschlag 2"", LOC, (28,39))]","[Entity(""Rinck"", PER, (7,12)), Entity(""Mulhouse"", LOC, (13,21))]"
+Hausgarten Büsser ,0.0,"{'PER': 0.0, 'LOC': 0.0}","[Entity(""Büsser"", LOC, (11,17))]","[Entity(""Büsser"", PER, (11,17))]"
+Garten Mercier-Rothweiler Glarus Zaunplatz,0.0,"{'PER': 0.0, 'LOC': 0.0}","[Entity(""Mercier-Rothweiler Glarus Zaunplatz"", PER, (7,42))]","[Entity(""Mercier-Rothweiler"", PER, (7,25)), Entity(""Glarus"", LOC, (26,32))]"
+Friedhof Glarus östliche Hälfte Vorschlag einer zeitgemässen Gestaltung,0.0,{'LOC': 0.0},"[Entity(""Glarus östliche"", LOC, (9,24))]","[Entity(""Glarus"", LOC, (9,15))]"
+Graeter + Cie Birsfelden Grünstreifen M 1:100 Detail A,0.0,{'LOC': 0.0},"[Entity(""Detail"", LOC, (46,52))]",[]
+Aarburg Wettbewerb Friedhofneubau Lageplan 1:200,0.0,{'LOC': 0.0},[],"[Entity(""Aarburg"", LOC, (0,7))]"
+n/A,0.0,{'LOC': 0.0},"[Entity(""n/"", LOC, (0,2))]",[]
+J. Henzler Allschwil Bepflanzungsplan 1:100,1.0,"{'PER': 1.0, 'LOC': 1.0}","[Entity(""J. Henzler"", PER, (0,10)), Entity(""Allschwil"", LOC, (11,20))]","[Entity(""J. Henzler"", PER, (0,10)), Entity(""Allschwil"", LOC, (11,20))]"
+Bell AG Basel Betonplatten 1:20,0.0,{'LOC': 0.0},"[Entity(""Bell AG Basel"", LOC, (0,13))]",[]
+Garten des Herrn Zubler Obertorweg 24 2. Vorschlag M. 1:50,0.0,"{'PER': 0.0, 'LOC': 0.0}","[Entity(""des Herrn Zubler Obertorweg 24 2."", PER, (7,40))]","[Entity(""Herrn Zubler"", PER, (11,23)), Entity(""Obertorweg"", LOC, (24,34))]"
+Garten des Herrn Direktor Joseph Simsa Riburg-Möhlin Masstab: 1:100 Zweiter Vorschlag,0.0,"{'PER': 0.0, 'LOC': 0.0}","[Entity(""des Herrn Direktor Joseph Simsa Riburg-Möhlin"", PER, (7,52)), Entity(""Zweiter Vorschlag"", PER, (68,85))]","[Entity(""Herrn Direktor Joseph Simsa"", PER, (11,38)), Entity(""Riburg-Möhlin"", LOC, (39,52))]"
+"Haus ""Im Obstgarten""  Skizze des alten Zustandes",,{},[],[]
+Spital Grenchen Gartenplan M: 1:200,0.0,{'LOC': 0.0},"[Entity(""Gartenplan"", LOC, (16,26))]","[Entity(""Grenchen"", LOC, (7,15))]"
+Kath. Kirchhof Rapperswil Vorschlag zur Ausgestaltung Neubelegung 1:100,0.0,{'LOC': 0.0},"[Entity(""Kath."", LOC, (0,5)), Entity(""Rapperswil"", LOC, (15,25))]","[Entity(""Rapperswil"", LOC, (15,25))]"
+Volksgarten Netstal ,0.0,{'LOC': 0.0},"[Entity(""Volksgarten Netstal"", LOC, (0,19))]","[Entity(""Netstal"", LOC, (12,19))]"
+Rosen u. Stauden-Garten zu Haus Direktor Meier Glattfelden,0.0,"{'PER': 0.0, 'LOC': 0.0}","[Entity(""Direktor Meier Glattfelden"", PER, (32,58))]","[Entity(""Haus Direktor Meier"", PER, (27,46)), Entity(""Glattfelden"", LOC, (47,58))]"
+J. Helfer Riedisheim Gartenplan 1:50,0.5,"{'PER': 0.0, 'LOC': 1.0}","[Entity(""Riedisheim"", LOC, (10,20))]","[Entity(""J. Helfer"", PER, (0,9)), Entity(""Riedisheim"", LOC, (10,20))]"
+Landgut Mappach Lageplan 1:100,,{},[],[]
+A.T. Gestaltung des Atriums M. 1:25 Vorschlag E,0.0,{'PER': 0.0},"[Entity(""Atriums M. 1:25"", PER, (20,35))]",[]
+Cilla AG. Basel Wohnhäuser Rainaallee Riehen Gärtnerische Umgebungsarbeiten Masstab 1:100,0.0,{'LOC': 0.0},"[Entity(""Rainaallee"", LOC, (27,37))]","[Entity(""Basel"", LOC, (10,15))]"
+Garten des Herrn Ingenieur Fritz Jacober Glarus Burgstrasse Masstab: 1:50,0.125,"{'PER': 0.25, 'LOC': 0.0}","[Entity(""des Herrn Ingenieur Fritz Jacober Glarus Burgstrasse"", PER, (7,59))]","[Entity(""Herrn Ingenieur Fritz Jacober"", PER, (11,40)), Entity(""Glarus"", LOC, (41,47))]"
+"Vorgarten und Rabatten am Hause J. T. Boemlé, Architekt  - Mulhouse  Lamartine Masstab 1:50",0.16666666666666666,"{'PER': 0.3333333333333333, 'LOC': 0.0}","[Entity(""J. T. Boemlé"", PER, (32,44)), Entity(""Architekt  -"", LOC, (46,58)), Entity(""Lamartine Masstab"", PER, (69,86))]","[Entity(""J. T. Boemlé"", PER, (32,44)), Entity(""Mulhouse"", LOC, (59,67))]"
+Garten Dr. Sporn Masstab: 1:100 Vorschlag C,0.25,"{'PER': 0.5, 'LOC': 0.0}","[Entity(""Dr. Sporn Masstab"", PER, (7,24)), Entity(""Vorschlag"", LOC, (32,41))]","[Entity(""Dr. Sporn"", PER, (7,16))]"
