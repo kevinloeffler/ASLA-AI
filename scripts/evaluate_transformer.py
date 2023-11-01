@@ -3,7 +3,7 @@ from lib.ner.models.transformer_model import TransformerModel
 
 
 def evaluate_transformer_model(config):
-    model = TransformerModel(model_type='roberta', model_name=config['paths']['models'] + 'ner/transformers/transformers_1')
+    model = TransformerModel(model_type='roberta', model_name='roberta-base')
     performance = model.test(config['paths']['data'] + 'ner/manual_training_data/per_loc_validation_1.csv')
     safe_predictions_to_csv(to='model_evaluation/ner/transformers_1.csv', prediction_results=performance)
 
