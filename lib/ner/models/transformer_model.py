@@ -11,16 +11,22 @@ from lib.ner.data import load_data
 
 class TransformerModel:
 
-    def __init__(self, model_type: str, model_name: str):
+    def __init__(self, model_type: str, model_name: str, numbers_of_gpus):
         self.__has_cuda = torch.cuda.is_available()
         print('CUDA enabled:', self.__has_cuda)
+        use_cuda = self.__has_cuda
 
         # labels = ["O", "B-MISC", "I-MISC", "B-PER", "I-PER", "B-ORG", "I-ORG", "B-LOC", "I-LOC"]
         self.labels = ['O', 'PER', 'LOC']
 
         model_args = NERArgs()
         model_args.labels_list = self.labels
-        self.model = NERModel(model_type, model_name, use_cuda=self.__has_cuda, args=model_args)
+        if numbers_of_gpus > 0:
+            use_cuda = True
+            model_args.n_gpu = numbers_of_gpus
+            print(f'using {numbers_of_gpus} GPUs')
+
+        self.model = NERModel(model_type, model_name, use_cuda=use_cuda, args=model_args)
 
     def train(self, with_training_csv: str, safe_to: str):
         data = self.load_data(with_training_csv)
