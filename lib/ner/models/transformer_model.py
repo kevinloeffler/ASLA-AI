@@ -11,7 +11,7 @@ from lib.ner.data import load_data
 
 class TransformerModel:
 
-    def __init__(self, model_type: str, model_name: str, numbers_of_gpus):
+    def __init__(self, model_type: str, model_name: str, numbers_of_gpus: int, training_iterations: int):
         self.__has_cuda = torch.cuda.is_available()
         print('CUDA enabled:', self.__has_cuda)
         use_cuda = self.__has_cuda
@@ -21,6 +21,7 @@ class TransformerModel:
 
         model_args = NERArgs()
         model_args.labels_list = self.labels
+        model_args.num_train_epochs = training_iterations
         if numbers_of_gpus > 0:
             use_cuda = True
             model_args.n_gpu = numbers_of_gpus
