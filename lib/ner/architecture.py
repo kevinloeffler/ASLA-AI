@@ -4,9 +4,6 @@ from abc import ABC, abstractmethod
 from dataclasses import dataclass
 from enum import Enum
 
-import numpy as np
-import pylab as p
-
 
 class EntityLabel(Enum):
     PER = 'Person'
@@ -141,8 +138,9 @@ class AbstractModel(ABC):
             targets = list(filter(lambda e: e.label.name == label, fragment.entities))
             predictions = list(filter(lambda p: p.label.name == label, predicted_entities))
             accuracy = self.__compare_prediction_to_target(text=fragment.text, target=targets, prediction=predictions)
-            accuracies.append(accuracy)
-            prediction_result.entity_accuracy[label] = accuracy
+            if accuracy is not None:
+                accuracies.append(accuracy)
+                prediction_result.entity_accuracy[label] = accuracy
 
         if not len(accuracies) == 0:
             prediction_result.accuracy = sum(accuracies) / len(accuracies)
