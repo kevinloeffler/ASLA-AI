@@ -11,7 +11,7 @@ from lib.ner.data import load_data
 
 class TransformerModel:
 
-    def __init__(self, model_type: str, model_name: str, numbers_of_gpus: int, training_iterations: int):
+    def __init__(self, model_type: str, model_name: str, numbers_of_gpus: int, training_iterations: int, gpu_id=4):
         self.__has_cuda = torch.cuda.is_available()
         print('CUDA enabled:', self.__has_cuda)
         use_cuda = self.__has_cuda
@@ -29,7 +29,7 @@ class TransformerModel:
             model_args.n_gpu = numbers_of_gpus
             print(f'using {numbers_of_gpus} GPUs')
 
-        self.model = NERModel(model_type, model_name, use_cuda=use_cuda, args=model_args)
+        self.model = NERModel(model_type, model_name, use_cuda=use_cuda, cuda_device=gpu_id, args=model_args)
 
     def train(self, with_training_csv: str, safe_to: str):
         data = self.load_data(with_training_csv)
