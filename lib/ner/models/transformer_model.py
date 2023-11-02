@@ -22,6 +22,8 @@ class TransformerModel:
         model_args = NERArgs()
         model_args.labels_list = self.labels
         model_args.num_train_epochs = training_iterations
+        model_args.use_multiprocessing = True
+        model_args.save_model_every_epoch = False
         if numbers_of_gpus > 0:
             use_cuda = True
             model_args.n_gpu = numbers_of_gpus

@@ -1,5 +1,6 @@
 import tomli
 
+from scripts.evaluate_transformer import evaluate_transformer_model
 from scripts.train_transformer import train_transformer_model
 
 if __name__ == '__main__':
@@ -21,6 +22,7 @@ if __name__ == '__main__':
         except KeyError:
             print('ERROR: missing config key: number_of_gpus')
 
+    evaluate_transformer_model(config)
     train_transformer_model(config)
 
 # data = model.load_data('data/ner/manual_training_data/per_loc_1.csv')
