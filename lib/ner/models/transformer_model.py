@@ -39,7 +39,7 @@ class TransformerModel:
         prediction, outputs = self.model.predict([fragment.text])
         return self.evaluate_model_prediction(fragment, prediction)
 
-    def test(self, with_testing_csv: str) -> list[PredictionResult]:
+    def test(self, with_testing_csv: str, output_file: str) -> list[PredictionResult]:
         results = []
         data = load_data(with_testing_csv)
         for datapoint in data:
@@ -57,6 +57,11 @@ class TransformerModel:
             if EntityLabel.LOC.name in result.entity_accuracy:
                 loc_count += 1
                 loc_total_accuracy += result.entity_accuracy[EntityLabel.LOC.name]
+
+        with open(output_file, 'x') as file:
+            file.write(f'Model accuracy: {model_accuracy}\n')
+            file.write(f'           PER: {per_total_accuracy / per_count}\n')
+            file.write(f'           LOC: {loc_total_accuracy / loc_count}\n')
 
         print('Model accuracy:', model_accuracy)
         print('           PER:', per_total_accuracy / per_count)
