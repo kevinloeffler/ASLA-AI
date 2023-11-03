@@ -1,4 +1,5 @@
 import csv
+import os
 import re
 
 import pandas as pd
@@ -24,6 +25,7 @@ class TransformerModel:
         model_args.num_train_epochs = training_iterations
         model_args.use_multiprocessing = True
         model_args.save_model_every_epoch = False
+        model_args.wandb_project = 'asla-ai'
         if numbers_of_gpus > 0:
             use_cuda = True
             model_args.n_gpu = numbers_of_gpus
@@ -40,6 +42,10 @@ class TransformerModel:
         return self.evaluate_model_prediction(fragment, prediction)
 
     def test(self, with_testing_csv: str, output_file: str) -> list[PredictionResult]:
+        if os.path.exists(output_file):
+            print('ERROR: Output file already exists')
+            return None
+
         results = []
         data = load_data(with_testing_csv)
         for datapoint in data:
@@ -58,14 +64,14 @@ class TransformerModel:
                 loc_count += 1
                 loc_total_accuracy += result.entity_accuracy[EntityLabel.LOC.name]
 
+        print('Model accuracy:', model_accuracy)
+        print('           PER:', per_total_accuracy / per_count)
+        print('           LOC:', loc_total_accuracy / loc_count)
+
         with open(output_file, 'x') as file:
             file.write(f'Model accuracy: {model_accuracy}\n')
             file.write(f'           PER: {per_total_accuracy / per_count}\n')
             file.write(f'           LOC: {loc_total_accuracy / loc_count}\n')
-
-        print('Model accuracy:', model_accuracy)
-        print('           PER:', per_total_accuracy / per_count)
-        print('           LOC:', loc_total_accuracy / loc_count)
 
         return results
 
