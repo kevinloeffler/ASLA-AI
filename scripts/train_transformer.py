@@ -7,5 +7,5 @@ def train_transformer_model(config):
                              numbers_of_gpus=config['number_of_gpus'],
                              training_iterations=200,
                              gpu_id=config['gpu_id'])
-    model.train(with_training_csv=config['paths']['data'] + 'ner/manual_training_data/generated_historic/historic_data.csv',
+    model.train(with_training_csv=config['paths']['data'] + 'ner/manual_training_data/combined_training.csv',
                 safe_to=config['paths']['models'] + 'ner/trf_bert_3')
