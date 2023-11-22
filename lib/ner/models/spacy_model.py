@@ -20,14 +20,14 @@ class SpacyModel(AbstractModel):
     ########## TRAINING ##########
 
     def train(self, iterations: int, with_training_csv: str, safe_to: str = '') -> list:
-        print(f'Loading model: "{self.model_name}"')
+        print(f'Loading layout_model: "{self.model_name}"')
         spacy.require_gpu()
         model = spacy.load(self.model_name)
         pipeline = model.get_pipe('ner')
 
         training_data = load_data(from_csv=with_training_csv, skip_overlapping=True)
         training_data = self.__convert_training_data(training_data)
-        print('Start training spacy model with:', len(training_data), 'datapoints')
+        print('Start training spacy layout_model with:', len(training_data), 'datapoints')
 
         for label in EntityLabel.__members__:
             pipeline.add_label(label)
@@ -57,11 +57,11 @@ class SpacyModel(AbstractModel):
                 losses.append(loss['ner'])
                 print(f'Iteration {iteration + 1}/{iterations}: Losses', loss)
 
-        print('Saving model to disk...')
+        print('Saving layout_model to disk...')
         self.__safe_model(model=model, path=safe_to)
 
         plt.plot(losses)
-        plt.title('Spacy model training loss')
+        plt.title('Spacy layout_model training loss')
         plt.show()
 
         return losses
@@ -129,5 +129,5 @@ class SpacyModel(AbstractModel):
         model.to_disk(path + '_' + str(suffix))
 
     def get_model(self):
-        print(f'Loading model: "{self.model_name}"')
+        print(f'Loading layout_model: "{self.model_name}"')
         return spacy.load(self.model_name)

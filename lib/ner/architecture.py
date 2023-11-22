@@ -91,7 +91,7 @@ class AbstractModel(ABC):
 
     @abstractmethod
     def train(self, iterations: int, with_training_csv: str, safe_to: str) -> list:
-        """Train the model and return a list of losses"""
+        """Train the layout_model and return a list of losses"""
         return NotImplemented
 
     @abstractmethod
@@ -101,7 +101,7 @@ class AbstractModel(ABC):
 
     @abstractmethod
     def test(self, with_testing_csv: str) -> list[PredictionResult]:
-        """Test model with a dataset"""
+        """Test layout_model with a dataset"""
         return NotImplemented
 
     ########## UTIL ##########
@@ -109,7 +109,7 @@ class AbstractModel(ABC):
     @staticmethod
     @abstractmethod
     def convert_fragment_to_data(fragment: Fragment) -> any:
-        """Convert a fragment to the datastructure the model expects"""
+        """Convert a fragment to the datastructure the layout_model expects"""
         return NotImplemented
 
     @staticmethod

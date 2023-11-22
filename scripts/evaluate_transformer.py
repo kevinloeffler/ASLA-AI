@@ -12,7 +12,7 @@ def evaluate_transformer_model(config):
                              output_file='model_evaluation/ner/trf_roberta_3.txt')
     safe_predictions_to_csv(to='model_evaluation/ner/trf_roberta_3.csv', prediction_results=performance)
 
-    # model = TransformerModel(model_type='roberta', model_name='roberta-base')
-    # model = TransformerModel(model_type='bert', model_name='domischwimmbeck/bert-base-german-cased-fine-tuned-ner')
-    # model.train(with_training_csv='data/ner/manual_training_data/per_loc_1.csv', safe_to=config['paths']['models'] + 'ner/transformers')
-    # model.predict(Fragment('Garten des Herrn Gretsch', entities=[]))
+    # layout_model = TransformerModel(model_type='roberta', model_name='roberta-base')
+    # layout_model = TransformerModel(model_type='bert', model_name='domischwimmbeck/bert-base-german-cased-fine-tuned-ner')
+    # layout_model.train(with_training_csv='data/ner/manual_training_data/per_loc_1.csv', safe_to=config['paths']['models'] + 'ner/transformers')
+    # layout_model.predict(Fragment('Garten des Herrn Gretsch', entities=[]))
