@@ -62,6 +62,7 @@ class SpacyModel(AbstractModel):
 
         plt.plot(losses)
         plt.title('Spacy layout_model training loss')
+        plt.savefig(safe_to + 'losses.png')
         plt.show()
 
         return losses

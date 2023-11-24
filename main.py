@@ -1,8 +1,7 @@
 import tomli
 
-from PIL import Image
-
 from lib.ocr.models.OCR import OCR
+from scripts.train_spacy import train_spacy
 
 if __name__ == '__main__':
     # config = None
@@ -23,8 +22,11 @@ if __name__ == '__main__':
         except KeyError:
             print('ERROR: missing config key: number_of_gpus')
 
-    model = OCR(layout_model='microsoft/layoutlmv2-base-uncased', ocr_model='microsoft/trocr-large-handwritten')
-    model.predict('data/ocr/mnu/MN_1517_3.jpg', overlap_threshold=0.5)
+    train_spacy(config)
+
+    # OCR
+    # model = OCR(layout_model='microsoft/layoutlmv2-base-uncased', ocr_model='microsoft/trocr-large-handwritten')
+    # model.predict('data/ocr/mnu/MN_1517_3.jpg', overlap_threshold=0.5)
 
     # data = load_images(csv_file=config['paths']['data'] + 'ner/training_data.csv',
                        #image_base_path=config['paths']['data'] + 'ocr/', count=4)
