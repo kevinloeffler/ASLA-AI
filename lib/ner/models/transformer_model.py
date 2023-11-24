@@ -39,6 +39,9 @@ class TransformerModel:
 
     def predict(self, fragment: Fragment) -> PredictionResult:
         prediction, outputs = self.model.predict([fragment.text])
+        print('Prediction:', prediction)
+        print('Outputs:', outputs)
+        return  # TODO: remove
         return self.evaluate_model_prediction(fragment, prediction)
 
     def test(self, with_testing_csv: str, output_file: str) -> list[PredictionResult]:
