@@ -73,6 +73,7 @@ class SpacyModel(AbstractModel):
         datapoint = self.convert_fragment_to_data(fragment)
         prediction = model(datapoint[0])
         predicted_entities = [self.__convert_model_prediction_to_entity(p, fragment) for p in prediction.ents]
+        print(predicted_entities)
         return self.evaluate_prediction(fragment=fragment, predicted_entities=predicted_entities)
 
     def test(self, with_testing_csv: str) -> list[PredictionResult]:
