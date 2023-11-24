@@ -4,24 +4,24 @@ import re
 
 
 def combine_nachlaesse(output_file: str):
-    entities = ['HEAD', 'MST', 'DATE']
+    entities = ['HEAD', 'MST', 'DATE', 'CLOC']
     data = {
         'cramer-ernst': {
-            'path': 'nachlaesse/csv/Werkverzeichnis-Cramer-Ernst.csv', 'id': 'identifier', 'project': 'cre',
-            'labels': {'HEAD': 'plan_head', 'MST': 'note.scale', 'DATE': 'creation_date_start'}
+            'path': '../../nachlaesse/csv/Werkverzeichnis-Cramer-Ernst.csv', 'id': 'identifier', 'project': 'cre',
+            'labels': {'HEAD': 'plan_head', 'MST': 'note.scale', 'DATE': 'creation_date_start', 'CLOC': 'creation_place'}
         },
         'mertens-nussbaumer': {
-            'path': 'nachlaesse/csv/Werkverzeichnis-Mertens-Nussbaumer.csv', 'id': 'identifier', 'project': 'mnu',
-            'labels': {'HEAD': 'plan_head', 'MST': 'note.scale', 'DATE': 'creation_date_start'}
+            'path': '../../nachlaesse/csv/Werkverzeichnis-Mertens-Nussbaumer.csv', 'id': 'identifier', 'project': 'mnu',
+            'labels': {'HEAD': 'plan_head', 'MST': 'note.scale', 'DATE': 'creation_date_start', 'CLOC': 'creation_place'}
         },
         'klauser': {
-            'path': 'nachlaesse/csv/Werkverzeichnis-Klauser.csv', 'id': 'identifier', 'project': 'kla',
-            'labels': {'HEAD': 'plan_head', 'MST': 'scale', 'DATE': 'creation_date_start'}
+            'path': '../../nachlaesse/csv/Werkverzeichnis-Klauser.csv', 'id': 'identifier', 'project': 'kla',
+            'labels': {'HEAD': 'plan_head', 'MST': 'scale', 'DATE': 'creation_date_start', 'CLOC': 'creation_place'}
         },
     }
 
     with open(output_file, 'x') as output_file:
-        writer = csv.writer(output_file)
+        writer = csv.writer(output_file, delimiter='\t')
         writer.writerow(['project', 'id'] + entities)
 
         for architect, info in data.items():
@@ -32,6 +32,7 @@ def combine_nachlaesse(output_file: str):
                 head_index = header.index(info['labels']['HEAD'])
                 mst_index = header.index(info['labels']['MST'])
                 date_index = header.index(info['labels']['DATE'])
+                cloc_index = header.index(info['labels']['CLOC'])
                 for row in reader:
                     writer.writerow([
                         info['project'],
@@ -39,6 +40,7 @@ def combine_nachlaesse(output_file: str):
                         row[head_index],
                         format_mst(row[mst_index]),
                         row[date_index],
+                        row[cloc_index],
                     ])
 
 
@@ -87,5 +89,6 @@ def print_municipalities(path_to_examples: str):
     print(len(examples))
 
 
+combine_nachlaesse('../../data/ner/training_data_2.csv')
 # print_municipalities('../manual_training_data/chat_gpt_location_files/200-300.txt')
 # extract_list_of_historic_municipalities('../manual_training_data/gemeinden_ch/gemeinden_1960/20230101_GDEHist_GDE.tsv')
