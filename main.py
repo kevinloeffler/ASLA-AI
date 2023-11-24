@@ -24,7 +24,7 @@ if __name__ == '__main__':
         except KeyError:
             print('ERROR: missing config key: number_of_gpus')
 
-    spacy = SpacyModel(model_name=config['paths']['models'] + 'ner/spacy_4')
+    spacy = SpacyModel(model_name=config['paths']['models'] + 'ner/spacy_0')
     model = spacy.get_model()
     spacy.predict(model, Fragment(text='klosterhof. wettingen. hofeinblick no. # 20 1949', entities=[]))
     spacy.predict(model, Fragment(text='archiv. fur. bile. schweizer. Gartenarchitektur und. landschaftsplanung rapperswil. sq. sammlung. mertens,n. " September', entities=[]))
