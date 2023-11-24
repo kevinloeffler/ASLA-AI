@@ -1,7 +1,6 @@
 import tomli
 
-from lib.ocr.models.OCR import OCR
-from scripts.train_spacy import train_spacy
+from scripts.train_transformer import train_transformer_model
 
 if __name__ == '__main__':
     # config = None
@@ -22,7 +21,7 @@ if __name__ == '__main__':
         except KeyError:
             print('ERROR: missing config key: number_of_gpus')
 
-    train_spacy(config)
+    train_transformer_model(config)
 
     # OCR
     # model = OCR(layout_model='microsoft/layoutlmv2-base-uncased', ocr_model='microsoft/trocr-large-handwritten')
