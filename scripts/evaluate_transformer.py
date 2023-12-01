@@ -8,7 +8,7 @@ def evaluate_transformer_model(config):
                              numbers_of_gpus=config['number_of_gpus'],
                              training_iterations=1,
                              gpu_id=config['gpu_id'])
-    performance = model.test(config['paths']['data'] + 'ner/manual-validation-1.tsv ',
+    performance = model.test(config['paths']['data'] + 'ner/manual-validation-1.tsv',
                              output_file='model_evaluation/ner/trf_roberta_4.txt')
     safe_predictions_to_csv(to='model_evaluation/ner/trf_roberta_4.csv', prediction_results=performance)
 
