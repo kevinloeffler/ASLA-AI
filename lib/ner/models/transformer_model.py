@@ -33,8 +33,8 @@ class TransformerModel:
 
         self.model = NERModel(model_type, model_name, use_cuda=use_cuda, cuda_device=gpu_id, args=model_args)
 
-    def train(self, with_training_csv: str, safe_to: str):
-        data = self.load_data(with_training_csv)
+    def train(self, with_training_csv: str, safe_to: str, delimiter: str = ','):
+        data = self.load_data(with_training_csv, delimiter)
         self.model.train_model(train_data=data, output_dir=safe_to, show_running_loss=True)
 
     def predict(self, fragment: Fragment) -> PredictionResult:
@@ -85,7 +85,7 @@ class TransformerModel:
     ########## UTIL ##########
 
     @staticmethod
-    def load_data(from_csv: str) -> pd.DataFrame:
+    def load_data(from_csv: str, delimiter: str = ',') -> pd.DataFrame:
         data = {
             'sentence_id': [],
             'words': [],
@@ -95,7 +95,7 @@ class TransformerModel:
         chars_to_ignore = ',.:'
 
         with open(from_csv, 'r') as file:
-            reader = csv.reader(file)
+            reader = csv.reader(file, delimiter=delimiter)
             header = next(reader)
 
             for index, row in enumerate(reader):
