@@ -1,9 +1,7 @@
 import tomli
 
-from lib.ner.architecture import Fragment
-from lib.ner.models.spacy_model import SpacyModel
-from lib.ner.models.transformer_model import TransformerModel
-from scripts.train_transformer import train_transformer_model
+from lib.ocr.models.OCR import OCR
+from scripts.evaluate_transformer import evaluate_transformer_model
 
 if __name__ == '__main__':
     # config = None
@@ -24,20 +22,21 @@ if __name__ == '__main__':
         except KeyError:
             print('ERROR: missing config key: number_of_gpus')
 
-    spacy = SpacyModel(model_name=config['paths']['models'] + 'ner/spacy_0')
-    model = spacy.get_model()
-    spacy.predict(model, Fragment(text='klosterhof. wettingen. hofeinblick no. # 20 1949', entities=[]))
-    spacy.predict(model, Fragment(text='archiv. fur. bile. schweizer. Gartenarchitektur und. landschaftsplanung rapperswil. sq. sammlung. mertens,n. " September', entities=[]))
-    spacy.predict(model, Fragment(text='mertens. thussbauer Gartchurch. bsg. swb.', entities=[]))
-    spacy.predict(model, Fragment(text='klosterhof. wettingen. m. 1; 100, projekt. zur. umgestaltung des. hofes.', entities=[]))
-    spacy.predict(model, Fragment(text='zurich 16. 2.49. plan. no, #419 "', entities=[]))
-    spacy.predict(model, Fragment(text='mertens # Nussbaumef gartenarch. b"s.g. f', entities=[]))
-    spacy.predict(model, Fragment(text='archiv. fur. die. schweizer. gartenarchitektur. und. landschaftsplanung rapperswil. sg. sammlung. mertens Nussbaumer', entities=[]))
-    spacy.predict(model, Fragment(text='1940s 1934 1907 1939 References THEA E. the first of a number of # Eisenhaq # # umgestell 0 0 1940s. 36.30 30. 0. 0 0 1907 1903 s. this Deckstraucher 0. 1961. to irri Brutenstand. 0 : ri- sci. # # 95 0 0 1907 08 57 " 53 " 4tho. \' 354-97. 1907 08 1907 1910 sion. 5 1 transiting 0 States 1907 0 0 Obstspaliere. ofavor. k. kirchenkrauter it 0 0 The 0 0 Prockenmal auer. s # # 0 0 0 0 0 0 0 Gebrider Mertens p 0 0 Gartenarchitekten B.S.G. Seyman\'s 1934 0 0 It is', entities=[]))
-    spacy.predict(model, Fragment(text='Garten zum. Pfarrhaus Herrliberg. Norden 0 0 0 4tho Wiese mit. Obstbaumen archiv. IDECHAFTSPIL Rappers Wil SG... sameung Martens, Nussbaumer', entities=[]))
-
+    evaluate_transformer_model(config)
 
     '''
+    from lib.ner.architecture import Fragment
+    from lib.ner.models.spacy_model import SpacyModel
+
+    spacy = SpacyModel(model_name=config['paths']['models'] + 'ner/spacy_4')
+    model = spacy.get_model()
+    spacy.predict(model, Fragment(text='archiv. fur. die. schweizer. Gartenarchitektur und. landschaftsplanung Rapperswil. sg. Nachlass. ernst. cramer. Norveys own history', entities=[]))
+    '''
+
+    '''
+    from lib.ner.architecture import Fragment
+    from lib.ner.models.transformer_model import TransformerModel
+
     model = TransformerModel(model_type='roberta',
                              model_name=config['paths']['models'] + 'ner/trf_roberta_4',
                              numbers_of_gpus=config['number_of_gpus'],
@@ -56,7 +55,7 @@ if __name__ == '__main__':
 
     # OCR
     # model = OCR(layout_model='microsoft/layoutlmv2-base-uncased', ocr_model='microsoft/trocr-large-handwritten')
-    # model.predict('data/ocr/mnu/MN_1517_3.jpg', overlap_threshold=0.5)
+    # model.predict('data/ocr/cre/cre_6202_1.jpg', overlap_threshold=0.5)
 
     # data = load_images(csv_file=config['paths']['data'] + 'ner/training_data.csv',
                        #image_base_path=config['paths']['data'] + 'ocr/', count=4)
