@@ -4,11 +4,11 @@ import random
 from lib.ner.architecture import Fragment, EntityLabel, Entity
 
 
-def load_data(from_csv: str, skip_overlapping: bool = False) -> list[Fragment]:
+def load_data(from_csv: str, delimiter: str = ',', skip_overlapping: bool = False) -> list[Fragment]:
     fragments: list[Fragment] = []
 
     with open(from_csv, 'r') as file:
-        reader = csv.reader(file)
+        reader = csv.reader(file, delimiter=delimiter)
         header = next(reader)
         labels = get_entities(header[1:])
 
@@ -113,6 +113,7 @@ def cloc_generator():
 
 def date_generator():
     buffer = []
+    # TODO: reformat date in different ways, eg: with . or month-names
     while True:
         if len(buffer) > 0:
             date = buffer.pop()
@@ -125,16 +126,44 @@ def date_generator():
 def template_generator():
     templates = (
         [{'template': 'Garten $CLT', 'tokens': ['$CLT']}] * 9 +
-        [{'template': 'Garten $CLT in $LOC', 'tokens': ['$CLT', '$LOC']}] * 6 +
-        [{'template': 'Garten $CLT, $MST', 'tokens': ['$CLT', '$MST']}] * 6 +
-        [{'template': 'Garten $CLT in $LOC, $MST', 'tokens': ['$CLT', '$LOC', '$MST']}] * 6 +
+        [{'template': 'Garten $CLT in $LOC', 'tokens': ['$CLT', '$LOC']}] * 5 +
+        [{'template': 'Garten $CLT, $MST', 'tokens': ['$CLT', '$MST']}] * 5 +
+        [{'template': 'Garten $CLT in $LOC, $MST', 'tokens': ['$CLT', '$LOC', '$MST']}] * 4 +
         [{'template': '$CLT', 'tokens': ['$CLT']}] * 2 +
         [{'template': '$LOC', 'tokens': ['$LOC']}] * 2 +
-        [{'template': '$CLOC, $DATE', 'tokens': ['$CLOC', '$DATE']}] * 5 +
+        [{'template': '$CLOC, $DATE', 'tokens': ['$CLOC', '$DATE']}] * 6 +
         [{'template': '$DATE $CLOC', 'tokens': ['$DATE', '$CLOC']}] * 5 +
         [{'template': '$CLOC am $DATE', 'tokens': ['$CLOC', '$DATE']}] * 4 +
-        [{'template': '$CLOC', 'tokens': ['$CLOC']}] * 7 +
-        [{'template': '$DATE', 'tokens': ['$DATE']}] * 7
+        [{'template': '$CLOC', 'tokens': ['$CLOC']}] * 5 +
+        [{'template': '$DATE', 'tokens': ['$DATE']}] * 6 +
+        [{'template': 'Hausgarten $CLT, $LOC', 'tokens': ['$CLT', '$LOC']}] * 1 +
+        [{'template': 'Gartenanlage $CLT $LOC $MST', 'tokens': ['$CLT', '$LOC', '$MST']}] * 1 +
+        [{'template': 'Werkzeichnung der Rosenbögen $MST', 'tokens': ['$MST']}] * 1 +
+        [{'template': 'Zeichnung Aussenanlage $CLT $MST', 'tokens': ['$CLT', '$MST']}] * 1 +
+        [{'template': 'Projekt $CLT $LOC', 'tokens': ['$CLT', '$LOC']}] * 1 +
+        [{'template': 'Liegenschaft $CLT, $LOC', 'tokens': ['$CLT', '$LOC']}] * 1 +
+        [{'template': 'Umgestaltung Garten $CLT $LOC', 'tokens': ['$CLT', '$LOC']}] * 1 +
+        [{'template': '$CLOC den $DATE', 'tokens': ['$CLOC', '$DATE']}] * 1 +
+        [{'template': 'Dreihäuser Gruppe in $LOC', 'tokens': ['$LOC']}] * 1 +
+        [{'template': 'Überbauung $LOC $MST', 'tokens': ['$LOC', '$MST']}] * 1 +
+        [{'template': 'Blick nach dem Wohnhaus vom Eingang - $LOC', 'tokens': ['$LOC']}] * 1 +
+        [{'template': 'Aussenhaus $CLT $MST', 'tokens': ['$CLT', '$LOC']}] * 1 +
+        [{'template': 'Packraum $MST', 'tokens': ['$MST']}] * 1 +
+        [{'template': 'Unser Garten $LOC', 'tokens': ['$LOC']}] * 1 +
+        [{'template': 'Garten $CLT / $LOC', 'tokens': ['$CLT', '$LOC']}] * 1 +
+        [{'template': 'Kantonsspital $LOC', 'tokens': ['$LOC']}] * 1 +
+        [{'template': 'Schulhaus $LOC', 'tokens': ['$LOC']}] * 1 +
+        [{'template': 'Kindergarten $LOC', 'tokens': ['$LOC']}] * 1 +
+        [{'template': 'Wohnhaus $CLT $LOC', 'tokens': ['$CLT', '$LOC']}] * 1 +
+        [{'template': 'Einfahrt $MST', 'tokens': ['$MST']}] * 1 +
+        [{'template': 'Weg zum Haus $CLT $LOC', 'tokens': ['$CLT', '$LOC']}] * 1 +
+        [{'template': 'Idee zur Ausgestaltung Projekt $CLT $LOC', 'tokens': ['$CLT', '$LOC']}] * 1 +
+        [{'template': 'Wohnsitz für $CLT, $LOC', 'tokens': ['$CLT', '$LOC']}] * 1 +
+        [{'template': 'Dachgarten Haus $CLT $LOC', 'tokens': ['$CLT', '$LOC']}] * 1 +
+        [{'template': 'Hausgarten $CLT $LOC Ausführungsplan', 'tokens': ['$CLT', '$LOC']}] * 1 +
+        [{'template': 'Hausgarten $CLT in $LOC', 'tokens': ['$CLT', '$LOC']}] * 1 +
+        [{'template': 'Wasser Becken $CLT Werkzeichnung', 'tokens': ['$CLT']}] * 1 +
+        [{'template': 'Werkzeichnung Weg $CLT $LOC', 'tokens': ['$CLT', '$LOC']}] * 1
     )
     while True:
         yield random.choice(templates)
