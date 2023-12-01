@@ -6,10 +6,17 @@ from enum import Enum
 
 
 class EntityLabel(Enum):
-    PER = 'Person'
-    LOC = 'Location'
-    MISC = 'Miscellaneous'
-    ORG = 'Organisation'
+    # OLD ENTITIES:
+    CLT = 'Client',
+    LOC = 'Location',
+    MST = 'Scale',
+    CLOC = 'Creation-place'
+    DATE = 'Date'
+
+    # PER = 'Person'
+    # LOC = 'Location'
+    # MISC = 'Miscellaneous'
+    # ORG = 'Organisation'
 
 
 @dataclass
