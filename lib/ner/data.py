@@ -163,7 +163,41 @@ def template_generator():
         [{'template': 'Hausgarten $CLT $LOC Ausführungsplan', 'tokens': ['$CLT', '$LOC']}] * 1 +
         [{'template': 'Hausgarten $CLT in $LOC', 'tokens': ['$CLT', '$LOC']}] * 1 +
         [{'template': 'Wasser Becken $CLT Werkzeichnung', 'tokens': ['$CLT']}] * 1 +
-        [{'template': 'Werkzeichnung Weg $CLT $LOC', 'tokens': ['$CLT', '$LOC']}] * 1
+        [{'template': 'Werkzeichnung Weg $CLT $LOC', 'tokens': ['$CLT', '$LOC']}] * 1 +
+        [{'template': 'Gestaltungsplan $CLT', 'tokens': ['$CLT']}] * 1 +
+        [{'template': 'Stützmauer $CLT $MST', 'tokens': ['$CLT', '$MST']}] * 1 +
+        [{'template': 'Umgebungsmauer $CLT, $LOC $MST', 'tokens': ['$CLT', '$LOC', '$MST']}] * 1 +
+        [{'template': 'Situation $MST', 'tokens': ['$MST']}] * 1 +
+        [{'template': 'Rasenfläche Neugestaltung Abtei $LOC', 'tokens': ['$LOC']}] * 1 +
+        [{'template': 'Blumenbeete Haus $CLT $LOC', 'tokens': ['$CLT', '$LOC']}] * 1 +
+        [{'template': 'Buschwindrosen $CLT $LOC', 'tokens': ['$CLT', '$LOC']}] * 1 +
+        [{'template': 'Hortensien Anlage $LOC', 'tokens': ['$LOC']}] * 1 +
+        # ChatGPT:
+        [{'template': 'Poolanlage $CLT, $LOC', 'tokens': ['$CLT', '$LOC']}] * 1 +
+        [{'template': 'Terrassengestaltung $CLT $LOC $MST', 'tokens': ['$CLT', '$LOC', '$MST']}] * 1 +
+        [{'template': 'Entwurf der Pergola $MST', 'tokens': ['$MST']}] * 1 +
+        [{'template': 'Skizze Außenbereich $CLT $MST', 'tokens': ['$CLT', '$MST']}] * 1 +
+        [{'template': 'Bauprojekt $CLT $LOC', 'tokens': ['$CLT', '$LOC']}] * 1 +
+        [{'template': 'Grundstück $CLT, $LOC', 'tokens': ['$CLT', '$LOC']}] * 1 +
+        [{'template': 'Neugestaltung Vorgarten $CLT $LOC', 'tokens': ['$CLT', '$LOC']}] * 1 +
+        [{'template': 'Siedlung mit drei Häusern in $LOC', 'tokens': ['$LOC']}] * 1 +
+        [{'template': 'Architektonische Planung $LOC $MST', 'tokens': ['$LOC', '$MST']}] * 1 +
+        [{'template': 'Aussicht vom Eingang auf das Wohnhaus - $LOC', 'tokens': ['$LOC']}] * 1 +
+        [{'template': 'Aussenansicht $CLT $MST', 'tokens': ['$CLT', '$MST']}] * 1 +
+        [{'template': 'Arbeitsbereich Oblicht $MST', 'tokens': ['$MST']}] * 1 +
+        [{'template': 'Landschaftsgarten $CLT / $LOC', 'tokens': ['$CLT', '$LOC']}] * 1 +
+        [{'template': 'Provinzkrankenhaus $LOC', 'tokens': ['$LOC']}] * 1 +
+        [{'template': 'Bildungseinrichtung $LOC', 'tokens': ['$LOC']}] * 1 +
+        [{'template': 'Kinderspielplatz $LOC', 'tokens': ['$LOC']}] * 1 +
+        [{'template': 'Familiäres Zuhause $CLT $LOC', 'tokens': ['$CLT', '$LOC']}] * 1 +
+        [{'template': 'Einfahrtsgestaltung $MST', 'tokens': ['$MST']}] * 1 +
+        [{'template': 'Pfad zum Haus $CLT $LOC', 'tokens': ['$CLT', '$LOC']}] * 1 +
+        [{'template': 'Konzept für die Gestaltung des Projekts $CLT $LOC', 'tokens': ['$CLT', '$LOC']}] * 1 +
+        [{'template': 'Domizil für $CLT, $LOC', 'tokens': ['$CLT', '$LOC']}] * 1 +
+        [{'template': 'Dachterrasse am Haus $CLT $LOC', 'tokens': ['$CLT', '$LOC']}] * 1 +
+        [{'template': 'Hausgarten $CLT $LOC Ausführungsplanung', 'tokens': ['$CLT', '$LOC']}] * 1 +
+        [{'template': 'Private Grünanlage $CLT in $LOC', 'tokens': ['$CLT', '$LOC']}] * 1 +
+        [{'template': 'Wasserelement $CLT Werkzeichnung', 'tokens': ['$CLT']}] * 1
     )
     while True:
         yield random.choice(templates)
@@ -207,4 +241,4 @@ def generate_ner_training_data(path: str, amount: int):
             writer.writerow(row)
 
 
-# generate_ner_training_data('../../data/ner/training_set_250.csv', 250)
+# generate_ner_training_data('../../data/ner/training_set_200.csv', 200)
