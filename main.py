@@ -1,7 +1,6 @@
 import tomli
 
-from lib.ocr.models.OCR import OCR
-from scripts.evaluate_transformer import evaluate_transformer_model
+from scripts.train_spacy import train_spacy
 
 if __name__ == '__main__':
     # config = None
@@ -22,7 +21,7 @@ if __name__ == '__main__':
         except KeyError:
             print('ERROR: missing config key: number_of_gpus')
 
-    evaluate_transformer_model(config)
+    train_spacy(config=config)
 
     '''
     from lib.ner.architecture import Fragment
