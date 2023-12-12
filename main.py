@@ -1,6 +1,7 @@
 import tomli
 
 from scripts.train_spacy import train_spacy
+from scripts.train_transformer import train_transformer_model
 
 if __name__ == '__main__':
     # config = None
@@ -21,7 +22,8 @@ if __name__ == '__main__':
         except KeyError:
             print('ERROR: missing config key: number_of_gpus')
 
-    train_spacy(config=config)
+    # train_spacy(config=config)
+    train_transformer_model(config=config)
 
     '''
     from lib.ner.architecture import Fragment
