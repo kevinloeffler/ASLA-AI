@@ -37,7 +37,6 @@ class TransformerModel:
     def train(self, with_training_csv: str, safe_to: str, delimiter: str = ','):
         data = self.load_data(with_training_csv, delimiter)
         print(f'start training with {len(data)} datapoints')
-        print(data[0: 10])
         self.model.train_model(train_data=data, output_dir=safe_to, show_running_loss=True)
 
     def predict(self, fragment: Fragment) -> PredictionResult:
