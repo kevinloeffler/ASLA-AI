@@ -18,7 +18,8 @@ class TransformerModel:
         use_cuda = self.__has_cuda
 
         # labels = ["O", "B-MISC", "I-MISC", "B-PER", "I-PER", "B-ORG", "I-ORG", "B-LOC", "I-LOC"]
-        self.labels = ['O', 'PER', 'LOC']
+        # self.labels = ['O', 'PER', 'LOC']
+        self.labels = ['O', 'CLT', 'LOC', 'MST', 'CLOC', 'DATE']
 
         model_args = NERArgs()
         model_args.labels_list = self.labels
@@ -35,6 +36,7 @@ class TransformerModel:
 
     def train(self, with_training_csv: str, safe_to: str, delimiter: str = ','):
         data = self.load_data(with_training_csv, delimiter)
+        print(f'start training with {len(data)} datapoints')
         self.model.train_model(train_data=data, output_dir=safe_to, show_running_loss=True)
 
     def predict(self, fragment: Fragment) -> PredictionResult:
@@ -58,6 +60,9 @@ class TransformerModel:
 
         per_count, loc_count = 0, 0
         per_total_accuracy, loc_total_accuracy = 0, 0
+
+        # TODO: make accuracy method generic to the type of entities
+        entities = [e for e in EntityLabel.__members__]
 
         for result in results:
             if EntityLabel.PER.name in result.entity_accuracy:
