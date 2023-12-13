@@ -12,7 +12,7 @@ from lib.ner.data import load_data
 
 class TransformerModel:
 
-    def __init__(self, model_type: str, model_name: str, numbers_of_gpus: int, training_iterations: int, gpu_id=4):
+    def __init__(self, model_type: str, model_name: str, numbers_of_gpus: int, training_iterations: int, gpu_id: int):
         self.__has_cuda = torch.cuda.is_available()
         print('CUDA enabled:', self.__has_cuda)
         use_cuda = self.__has_cuda
@@ -25,7 +25,7 @@ class TransformerModel:
         model_args.labels_list = self.labels
         model_args.num_train_epochs = training_iterations
         model_args.use_multiprocessing = True
-        model_args.save_model_every_epoch = False
+        model_args.save_model_every_epoch = True
         model_args.wandb_project = 'asla-ai'
         if numbers_of_gpus > 0:
             use_cuda = True
