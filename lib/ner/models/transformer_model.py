@@ -37,13 +37,13 @@ class TransformerModel:
     def train(self, with_training_csv: str, safe_to: str, delimiter: str = ','):
         data = self.load_data(with_training_csv, delimiter)
         print(f'start training with {len(data)} datapoints')
+        print(data[0: 10])
         self.model.train_model(train_data=data, output_dir=safe_to, show_running_loss=True)
 
     def predict(self, fragment: Fragment) -> PredictionResult:
         prediction, outputs = self.model.predict([fragment.text])
         print('Prediction:', prediction)
         print('Outputs:', outputs)
-        return  # TODO: remove
         return self.evaluate_model_prediction(fragment, prediction)
 
     def test(self, with_testing_csv: str, output_file: str) -> list[PredictionResult]:
@@ -89,39 +89,67 @@ class TransformerModel:
 
     ########## UTIL ##########
 
+    def load_data(self, from_csv: str, delimiter: str = ',') -> pd.DataFrame:
+        # Ignore
+        ignored_chars = [',', '.', ';', ':']
+
+        # Read CSV file into a pandas DataFrame
+        df = pd.read_csv(from_csv, delimiter=delimiter)
+
+        # Initialize lists to store CoNLL format data
+        sentence_ids = []
+        words = []
+        labels = []
+
+        # Iterate through rows and extract information
+        for index, row in df.iterrows():
+            sentence_id = index
+            sentence = row['sentence']
+            clt = row['CLT']
+            loc = row['LOC']
+            mst = row['MST']
+            cloc = row['CLOC']
+            date = row['DATE']
+
+            # Tokenize the sentence
+            sentence_tokens = sentence.split()
+
+            # Append token-level information to lists
+            for word in sentence_tokens:
+                sentence_ids.append(sentence_id)
+                words.append(word)
+                # Check for NaN values before comparing labels
+                if pd.notna(loc) and self._word_in_sentence(word, loc, ignored_chars):
+                    labels.append('LOC')
+                elif pd.notna(clt) and self._word_in_sentence(word, clt, ignored_chars):
+                    labels.append('CLT')
+                elif pd.notna(mst) and self._word_in_sentence(word, mst, ignored_chars):
+                    labels.append('MST')
+                elif pd.notna(cloc) and self._word_in_sentence(word, cloc, ignored_chars):
+                    labels.append('CLOC')
+                elif pd.notna(date) and self._word_in_sentence(word, date, ignored_chars):
+                    labels.append('DATE')
+                else:
+                    labels.append('O')
+
+        # Create a new DataFrame in CoNLL format
+        conll_df = pd.DataFrame({
+            'sentence_id': sentence_ids,
+            'words': words,
+            'labels': labels
+        })
+
+        return conll_df
+
     @staticmethod
-    def load_data(from_csv: str, delimiter: str = ',') -> pd.DataFrame:
-        data = {
-            'sentence_id': [],
-            'words': [],
-            'labels': [],
-        }
-
-        chars_to_ignore = ',.:'
-
-        with open(from_csv, 'r') as file:
-            reader = csv.reader(file, delimiter=delimiter)
-            header = next(reader)
-
-            for index, row in enumerate(reader):
-                sentence_tokenized: list[str] = row[0].split(' ')
-                data['sentence_id'] += [index] * len(sentence_tokenized)
-                data['words'] += sentence_tokenized
-
-                labels = []
-                for token_index, token in enumerate(sentence_tokenized):
-                    local_labels = []
-                    for label_index, label in enumerate(header[1:]):
-                        if re.sub(f'[{chars_to_ignore}]', '', token) in row[label_index + 1].split(' '):
-                            local_labels.append(label)
-                    if len(local_labels) == 1:
-                        labels.append(local_labels[0])
-                    else:
-                        labels.append('O')
-
-                data['labels'] += labels
-
-        return pd.DataFrame(data=data)
+    def _word_in_sentence(word: str, sentence: str, ignored_chars: list[str]) -> bool:
+        for char in ignored_chars:
+            word = word.replace(char, '')
+        for s in sentence.split():
+            for char in ignored_chars:
+                s = s.replace(char, '')
+            if word == s:
+                return True
 
     @staticmethod
     def evaluate_model_prediction(fragment: Fragment, prediction: list[list[dict[str, str]]]) -> PredictionResult:

@@ -8,7 +8,8 @@ def train_transformer_model(config):
                              training_iterations=70,
                              gpu_id=config['gpu_id'])
     model.train(with_training_csv=config['paths']['data'] + 'ner/training_set_200.csv',
-                safe_to=config['paths']['models'] + 'ner/trf_roberta_5')
+                safe_to=config['paths']['models'] + 'ner/trf_roberta_5',
+                delimiter='\t')
 
 # BASE MODELS:
 # roberta - roberta-base
