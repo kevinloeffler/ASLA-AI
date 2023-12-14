@@ -5,7 +5,7 @@ def train_transformer_model(config):
 
     safe_to = config['paths']['models'] + 'ner/xlm-roberta-1'
 
-    model = TransformerModel(model_type='roberta-base',
+    model = TransformerModel(model_type='roberta',
                              model_name='xlm-roberta-base',  # config['paths']['models'] + 'ner/trf_bert_1',
                              training_iterations=70,
                              safe_to=safe_to,
