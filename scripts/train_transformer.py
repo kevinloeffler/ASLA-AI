@@ -7,7 +7,7 @@ def train_transformer_model(config):
 
     model = TransformerModel(model_type='roberta',
                              model_name='roberta-base',  # config['paths']['models'] + 'ner/trf_bert_1',
-                             training_iterations=70,
+                             training_iterations=5,
                              safe_to=safe_to,
                              numbers_of_gpus=config['number_of_gpus'],
                              gpu_id=config['gpu_id'])
