@@ -153,7 +153,7 @@ def evaluate_prediction(fragment: Fragment, predicted_entities: list[Entity]) ->
 
 
 def compare_prediction_to_target(target: list[Entity], prediction: list[Entity]) -> float | None:
-    delimiters = '\s|,|:|;|/'
+    delimiters = '\s|,|:|;|/|='
 
     tokenized_target = list(filter(
         lambda el: el != '', re.split(delimiters, ' '.join([t.text for t in target]))))
