@@ -27,7 +27,7 @@ class Entity:
     text : str
         a string that contains the token, eg: 'Walter Leder'
     label: EntityLabel
-        an enum that describes what kind of entity this is, eg: PER (person), LOC (location)
+        an enum that describes what kind of entity this is, eg: LOC (location)
     start_index: int
         where this entity starts in the string
     end_index: int
@@ -77,9 +77,9 @@ class Fragment:
             entity_to_check = local_entities.pop(0)
             for entity in local_entities:
                 if (entity.start_index < entity_to_check.start_index < entity.end_index
-                or entity_to_check.start_index < entity.start_index < entity_to_check.end_index
-                or entity.start_index < entity_to_check.end_index < entity.end_index
-                or entity_to_check.start_index < entity.end_index < entity_to_check.end_index):
+                        or entity_to_check.start_index < entity.start_index < entity_to_check.end_index
+                        or entity.start_index < entity_to_check.end_index < entity.end_index
+                        or entity_to_check.start_index < entity.end_index < entity_to_check.end_index):
                     return True
         return False
 
@@ -87,6 +87,9 @@ class Fragment:
 @dataclass
 class PredictionResult:
     accuracy: float | None
+    precision: float | None
+    recall: float | None
+
     entity_accuracy: dict[str, float]
 
     text: str
@@ -129,57 +132,73 @@ class AbstractModel(ABC):
 
 ##########
 
+
 def evaluate_prediction(fragment: Fragment, predicted_entities: list[Entity]) -> PredictionResult:
-    prediction_result = PredictionResult(accuracy=None,
+    true_positives = 0
+    false_positives = 0
+
+    for prediction in predicted_entities:
+        for target in fragment.entities:
+            if prediction.text in target.text and prediction.label.name == target.label.name:
+                true_positives += 1
+                break
+        else:
+            false_positives += 1
+            continue
+
+    false_negatives = len(fragment.entities) - true_positives
+
+    prediction_result = PredictionResult(accuracy=1, precision=1, recall=1,
                                          entity_accuracy={},
                                          text=fragment.text,
                                          entities=fragment.entities,
                                          predictions=predicted_entities)
-    accuracies = []
 
-    labels = set([p.label.name for p in predicted_entities] + [e.label.name for e in fragment.entities])
-    for label in labels:
-        targets = list(filter(lambda e: e.label.name == label, fragment.entities))
-        predictions = list(filter(lambda p: p.label.name == label, predicted_entities))
-        accuracy = compare_prediction_to_target(target=targets, prediction=predictions)
-        if accuracy is not None:
-            accuracies.append(accuracy)
-            prediction_result.entity_accuracy[label] = accuracy
+    if true_positives == 0 and (false_positives + false_negatives) == 0:
+        return prediction_result
 
-    if not len(accuracies) == 0:
-        prediction_result.accuracy = sum(accuracies) / len(accuracies)
+    entity_accuracy = evaluate_entity_accuracy(fragment=fragment, predicted_entities=predicted_entities)
+    prediction_result.entity_accuracy = entity_accuracy
 
+    precision = true_positives / (true_positives + false_positives) if (true_positives + false_positives) > 0 else 0
+    recall = true_positives / (true_positives + false_negatives) if (true_positives + false_negatives) > 0 else 0
+    f1_score = (2 * precision * recall) / (precision + recall) if (precision + recall) > 0 else 0.
+
+    prediction_result.accuracy = f1_score
+    prediction_result.precision = precision
+    prediction_result.recall = recall
     return prediction_result
 
 
-def compare_prediction_to_target(target: list[Entity], prediction: list[Entity]) -> float | None:
-    delimiters = '\s|,|:|;|/|='
+def evaluate_entity_accuracy(fragment: Fragment, predicted_entities: list[Entity]) -> dict[str, float]:
+    relevant_entities = set(
+        [entity.label.name for entity in fragment.entities] + [entity.label.name for entity in predicted_entities]
+    )
+    entity_accuracy = {key: 0.0 for key in relevant_entities}
 
-    tokenized_target = list(filter(
-        lambda el: el != '', re.split(delimiters, ' '.join([t.text for t in target]))))
+    for entity in relevant_entities:
+        targets = list(filter(lambda t: t.label.name == entity, fragment.entities))
+        predictions = list(filter(lambda p: p.label.name == entity, predicted_entities))
 
-    tokenized_prediction = list(filter(
-        lambda el: el != '', re.split(delimiters, ' '.join([p.text for p in prediction]))))
+        true_positives = 0
+        false_positives = 0
 
-    total_tokens = len(tokenized_target)
-    correct_tokens = 0
-    incorrect_tokens = 0
+        for prediction in predictions:
+            for target in targets:
+                if prediction.text in target.text:
+                    true_positives += 1
+                    break
+            else:
+                false_positives += 1
+                continue
 
-    for t_target in tokenized_target:
-        if t_target in tokenized_prediction:
-            correct_tokens += 1
-            tokenized_prediction.remove(t_target)
-        else:
-            incorrect_tokens += 1
+        false_negatives = len(targets) - true_positives
 
-    incorrect_tokens += len(tokenized_prediction)
+        precision = true_positives / (true_positives + false_positives) if (true_positives + false_positives) > 0 else 0
+        recall = true_positives / (true_positives + false_negatives) if (true_positives + false_negatives) > 0 else 0
+        entity_accuracy[entity] = (2 * precision * recall) / (precision + recall) if (precision + recall) > 0 else 0.
 
-    if total_tokens == 0 and incorrect_tokens == 0:
-        return None  # nothing to predict and not too much predicted
-    elif total_tokens == 0:
-        return 0.  # too much predicted
-    else:
-        return max(0., (correct_tokens - incorrect_tokens) / total_tokens)
+    return entity_accuracy
 
 
 def safe_predictions_to_csv(to: str, prediction_results: list[PredictionResult]):
