@@ -3,10 +3,10 @@ from lib.ner.models.transformer_model import TransformerModel
 
 def train_transformer_model(config):
 
-    safe_to = config['paths']['models'] + 'ner/roberta-large-100'
+    safe_to = config['paths']['models'] + 'ner/german-bert-100'
 
-    model = TransformerModel(model_type='roberta',
-                             model_name='roberta-large',  # config['paths']['models'] + 'ner/trf_bert_1',
+    model = TransformerModel(model_type='bert',
+                             model_name='bert-base-german-cased',  # config['paths']['models'] + 'ner/trf_bert_1',
                              training_iterations=70,
                              safe_to=safe_to,
                              numbers_of_gpus=config['number_of_gpus'],
@@ -17,9 +17,9 @@ def train_transformer_model(config):
 
     # REPEAT ---------------------------------------
 
-    safe_to = config['paths']['models'] + 'ner/roberta-large-500'
-    model = TransformerModel(model_type='roberta',
-                             model_name='roberta-large',  # config['paths']['models'] + 'ner/trf_bert_1',
+    safe_to = config['paths']['models'] + 'ner/german-bert-500'
+    model = TransformerModel(model_type='bert',
+                             model_name='bert-base-german-cased',  # config['paths']['models'] + 'ner/trf_bert_1',
                              training_iterations=70,
                              safe_to=safe_to,
                              numbers_of_gpus=config['number_of_gpus'],
@@ -29,9 +29,9 @@ def train_transformer_model(config):
                 delimiter='\t')
 
 
-    safe_to = config['paths']['models'] + 'ner/roberta-large-1000'
-    model = TransformerModel(model_type='roberta',
-                             model_name='roberta-large',  # config['paths']['models'] + 'ner/trf_bert_1',
+    safe_to = config['paths']['models'] + 'ner/german-bert-1000'
+    model = TransformerModel(model_type='bert',
+                             model_name='bert-base-german-cased',  # config['paths']['models'] + 'ner/trf_bert_1',
                              training_iterations=70,
                              safe_to=safe_to,
                              numbers_of_gpus=config['number_of_gpus'],
@@ -41,9 +41,9 @@ def train_transformer_model(config):
                 delimiter='\t')
 
 
-    safe_to = config['paths']['models'] + 'ner/roberta-large-2000'
-    model = TransformerModel(model_type='roberta',
-                             model_name='roberta-large',  # config['paths']['models'] + 'ner/trf_bert_1',
+    safe_to = config['paths']['models'] + 'ner/german-bert-2000'
+    model = TransformerModel(model_type='bert',
+                             model_name='bert-base-german-cased',  # config['paths']['models'] + 'ner/trf_bert_1',
                              training_iterations=70,
                              safe_to=safe_to,
                              numbers_of_gpus=config['number_of_gpus'],
