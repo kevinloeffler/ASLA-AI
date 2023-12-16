@@ -1,5 +1,6 @@
 import tomli
 
+from scripts.evaluate_transformer import evaluate_transformer_model
 from scripts.train_transformer import train_transformer_model
 
 if __name__ == '__main__':
@@ -23,7 +24,7 @@ if __name__ == '__main__':
 
     # train_spacy(config=config)
     train_transformer_model(config=config)
-    # evaluate_transformer_model(config=config)
+    evaluate_transformer_model(config=config)
 
     '''
     from lib.ner.architecture import Fragment

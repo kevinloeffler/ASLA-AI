@@ -4,7 +4,7 @@ from lib.ner.models.transformer_model import TransformerModel
 
 def evaluate_transformer_model(config):
 
-    model_name = 'xlm-roberta-1'
+    model_name = 'roberta-large-100'
 
     model = TransformerModel(model_type='roberta',
                              model_name=config['paths']['models'] + 'ner/' + model_name,
@@ -21,22 +21,7 @@ def evaluate_transformer_model(config):
 
     # REPEAT ------------------------------------
 
-    model_name = 'german-bert-1'
-
-    model = TransformerModel(model_type='bert',
-                             model_name=config['paths']['models'] + 'ner/' + model_name,
-                             training_iterations=1,
-                             safe_to=config['paths']['models'] + 'ner/' + model_name,
-                             numbers_of_gpus=config['number_of_gpus'],
-                             gpu_id=config['gpu_id'])
-
-    performance = model.test(config['paths']['data'] + 'ner/manual-validation-1.tsv',
-                             output_file=f'model_evaluation/ner/{model_name}.txt',
-                             delimiter='\t')
-
-    safe_predictions_to_csv(to=f'model_evaluation/ner/{model_name}.csv', prediction_results=performance)
-
-    model_name = 'roberta-large-1'
+    model_name = 'roberta-large-500'
 
     model = TransformerModel(model_type='roberta',
                              model_name=config['paths']['models'] + 'ner/' + model_name,
@@ -51,7 +36,7 @@ def evaluate_transformer_model(config):
 
     safe_predictions_to_csv(to=f'model_evaluation/ner/{model_name}.csv', prediction_results=performance)
 
-    model_name = 'trf_roberta_5'
+    model_name = 'roberta-large-1000'
 
     model = TransformerModel(model_type='roberta',
                              model_name=config['paths']['models'] + 'ner/' + model_name,
@@ -66,7 +51,22 @@ def evaluate_transformer_model(config):
 
     safe_predictions_to_csv(to=f'model_evaluation/ner/{model_name}.csv', prediction_results=performance)
 
-    model_name = 'trf_bert_5'
+    model_name = 'roberta-large-2000'
+
+    model = TransformerModel(model_type='roberta',
+                             model_name=config['paths']['models'] + 'ner/' + model_name,
+                             training_iterations=1,
+                             safe_to=config['paths']['models'] + 'ner/' + model_name,
+                             numbers_of_gpus=config['number_of_gpus'],
+                             gpu_id=config['gpu_id'])
+
+    performance = model.test(config['paths']['data'] + 'ner/manual-validation-1.tsv',
+                             output_file=f'model_evaluation/ner/{model_name}.txt',
+                             delimiter='\t')
+
+    safe_predictions_to_csv(to=f'model_evaluation/ner/{model_name}.csv', prediction_results=performance)
+
+    model_name = 'german-bert-100'
 
     model = TransformerModel(model_type='bert',
                              model_name=config['paths']['models'] + 'ner/' + model_name,
@@ -81,7 +81,110 @@ def evaluate_transformer_model(config):
 
     safe_predictions_to_csv(to=f'model_evaluation/ner/{model_name}.csv', prediction_results=performance)
 
+    model_name = 'german-bert-500'
 
+    model = TransformerModel(model_type='bert',
+                             model_name=config['paths']['models'] + 'ner/' + model_name,
+                             training_iterations=1,
+                             safe_to=config['paths']['models'] + 'ner/' + model_name,
+                             numbers_of_gpus=config['number_of_gpus'],
+                             gpu_id=config['gpu_id'])
+
+    performance = model.test(config['paths']['data'] + 'ner/manual-validation-1.tsv',
+                             output_file=f'model_evaluation/ner/{model_name}.txt',
+                             delimiter='\t')
+
+    safe_predictions_to_csv(to=f'model_evaluation/ner/{model_name}.csv', prediction_results=performance)
+
+    model_name = 'german-bert-1000'
+
+    model = TransformerModel(model_type='bert',
+                             model_name=config['paths']['models'] + 'ner/' + model_name,
+                             training_iterations=1,
+                             safe_to=config['paths']['models'] + 'ner/' + model_name,
+                             numbers_of_gpus=config['number_of_gpus'],
+                             gpu_id=config['gpu_id'])
+
+    performance = model.test(config['paths']['data'] + 'ner/manual-validation-1.tsv',
+                             output_file=f'model_evaluation/ner/{model_name}.txt',
+                             delimiter='\t')
+
+    safe_predictions_to_csv(to=f'model_evaluation/ner/{model_name}.csv', prediction_results=performance)
+
+    model_name = 'german-bert-2000'
+
+    model = TransformerModel(model_type='bert',
+                             model_name=config['paths']['models'] + 'ner/' + model_name,
+                             training_iterations=1,
+                             safe_to=config['paths']['models'] + 'ner/' + model_name,
+                             numbers_of_gpus=config['number_of_gpus'],
+                             gpu_id=config['gpu_id'])
+
+    performance = model.test(config['paths']['data'] + 'ner/manual-validation-1.tsv',
+                             output_file=f'model_evaluation/ner/{model_name}.txt',
+                             delimiter='\t')
+
+    safe_predictions_to_csv(to=f'model_evaluation/ner/{model_name}.csv', prediction_results=performance)
+
+    model_name = 'xlm-roberta-100'
+
+    model = TransformerModel(model_type='roberta',
+                             model_name=config['paths']['models'] + 'ner/' + model_name,
+                             training_iterations=1,
+                             safe_to=config['paths']['models'] + 'ner/' + model_name,
+                             numbers_of_gpus=config['number_of_gpus'],
+                             gpu_id=config['gpu_id'])
+
+    performance = model.test(config['paths']['data'] + 'ner/manual-validation-1.tsv',
+                             output_file=f'model_evaluation/ner/{model_name}.txt',
+                             delimiter='\t')
+
+    safe_predictions_to_csv(to=f'model_evaluation/ner/{model_name}.csv', prediction_results=performance)
+
+    model_name = 'xlm-roberta-500'
+
+    model = TransformerModel(model_type='roberta',
+                             model_name=config['paths']['models'] + 'ner/' + model_name,
+                             training_iterations=1,
+                             safe_to=config['paths']['models'] + 'ner/' + model_name,
+                             numbers_of_gpus=config['number_of_gpus'],
+                             gpu_id=config['gpu_id'])
+
+    performance = model.test(config['paths']['data'] + 'ner/manual-validation-1.tsv',
+                             output_file=f'model_evaluation/ner/{model_name}.txt',
+                             delimiter='\t')
+
+    safe_predictions_to_csv(to=f'model_evaluation/ner/{model_name}.csv', prediction_results=performance)
+
+    model_name = 'xlm-roberta-1000'
+
+    model = TransformerModel(model_type='roberta',
+                             model_name=config['paths']['models'] + 'ner/' + model_name,
+                             training_iterations=1,
+                             safe_to=config['paths']['models'] + 'ner/' + model_name,
+                             numbers_of_gpus=config['number_of_gpus'],
+                             gpu_id=config['gpu_id'])
+
+    performance = model.test(config['paths']['data'] + 'ner/manual-validation-1.tsv',
+                             output_file=f'model_evaluation/ner/{model_name}.txt',
+                             delimiter='\t')
+
+    safe_predictions_to_csv(to=f'model_evaluation/ner/{model_name}.csv', prediction_results=performance)
+
+    model_name = 'xlm-roberta-2000'
+
+    model = TransformerModel(model_type='roberta',
+                             model_name=config['paths']['models'] + 'ner/' + model_name,
+                             training_iterations=1,
+                             safe_to=config['paths']['models'] + 'ner/' + model_name,
+                             numbers_of_gpus=config['number_of_gpus'],
+                             gpu_id=config['gpu_id'])
+
+    performance = model.test(config['paths']['data'] + 'ner/manual-validation-1.tsv',
+                             output_file=f'model_evaluation/ner/{model_name}.txt',
+                             delimiter='\t')
+
+    safe_predictions_to_csv(to=f'model_evaluation/ner/{model_name}.csv', prediction_results=performance)
 
 
     # layout_model = TransformerModel(model_type='roberta', model_name='roberta-base')
