@@ -2,7 +2,7 @@
 
 data/
 lib/ner/old/
-model_evaluation/ner/plots/
+model_evaluation/ner-old/plots/
 /models/
 nachlaesse/
 stuff/
