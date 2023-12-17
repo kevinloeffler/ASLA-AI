@@ -77,31 +77,35 @@ class SpacyModel(AbstractModel):
         print(predicted_entities)
         return self.evaluate_prediction(fragment=fragment, predicted_entities=predicted_entities)
 
-    def test(self, with_testing_csv: str) -> list[PredictionResult]:
-        model = self.get_model()
-        results = []
 
-        data = load_data(with_testing_csv)
+    def test(self, with_testing_csv: str, output_file: str, delimiter: str) -> list[PredictionResult]:
+        if os.path.exists(output_file):
+            print('ERROR: Output file already exists')
+            return None
+
+        results = []
+        data = load_data(with_testing_csv, delimiter=delimiter)
         for datapoint in data:
-            results.append(self.predict(model, datapoint))
+            results.append(self.predict(datapoint))
 
         model_accuracy = sum([p.accuracy if p.accuracy else 0 for p in results]) / len(results)
 
-        per_count, loc_count = 0, 0
-        per_total_accuracy, loc_total_accuracy = 0, 0
+        accuracy_per_label = {label: [] for label in self.labels}
 
-        # TODO: does not work for the new dataset
         for result in results:
-            if EntityLabel.PER.name in result.entity_accuracy:
-                per_count += 1
-                per_total_accuracy += result.entity_accuracy[EntityLabel.PER.name]
-            if EntityLabel.LOC.name in result.entity_accuracy:
-                loc_count += 1
-                loc_total_accuracy += result.entity_accuracy[EntityLabel.LOC.name]
+            for label in self.labels:
+                if label in result.entity_accuracy:
+                    accuracy_per_label[label].append(result.entity_accuracy[label])
 
-        print('Model accuracy:', model_accuracy)
-        print('           PER:', per_total_accuracy / per_count)
-        print('           LOC:', loc_total_accuracy / loc_count)
+        print(f'Model accuracy: {model_accuracy}')
+
+        with open(output_file, 'x') as file:
+            file.write(f'Model accuracy: {model_accuracy}\n')
+            for label_accuracy in accuracy_per_label.items():
+                combined_accuracy = round(sum(label_accuracy[1]) / max(len(label_accuracy[1]), 1), 4)
+                text_output = f'{label_accuracy[0]}: {combined_accuracy} over {len(label_accuracy[1])} predictions'
+                file.write(text_output + '\n')
+                print(text_output)
 
         return results
 
