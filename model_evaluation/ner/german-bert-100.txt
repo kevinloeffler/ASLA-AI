@@ -1,0 +1,7 @@
+Model accuracy: 0.8774444444444444
+O: 0.0 over 0 predictions
+CLT: 0.7622 over 32 predictions
+LOC: 0.7562 over 35 predictions
+MST: 0.881 over 28 predictions
+CLOC: 0.0 over 5 predictions
+DATE: 0.375 over 8 predictions
