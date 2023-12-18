@@ -1,11 +1,13 @@
 import random
 from dataclasses import dataclass
 
+import numpy as np
 from PIL import Image, ImageDraw
 from transformers import LayoutLMv2Processor
 
 from lib.ocr.clustering import Clustering
 from lib.ocr.models.TrOCR import TrOCR
+from lib.ocr.preprocessing import remove_stamp
 from lib.util import create_unverified_ssl_context, Timer
 
 BoundingBox = tuple[int, int, int, int]
@@ -34,6 +36,7 @@ class OCR:
         timer.start()
 
         image = Image.open(path).convert('RGB')
+        image = Image.fromarray(remove_stamp(image_data=np.asarray(image), stamp_path='lib/ocr/asla_stamp_cropped.jpg'))
         encoding = self.layout_model(image, return_tensors="pt")
         del encoding["image"]
 
