@@ -5,8 +5,7 @@ import torch
 
 class TrOCR:
     def __init__(self, model: str):
-        self.device = torch.device('cpu')  # TODO: change to gpu if is available
-        # self.device = torch.device('cuda:0' if torch.cuda.is_available else 'cpu')
+        self.device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
         self.processor = TrOCRProcessor.from_pretrained(model)
         self.model = VisionEncoderDecoderModel.from_pretrained(model).to(self.device)
 
