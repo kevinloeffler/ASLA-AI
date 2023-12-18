@@ -15,9 +15,21 @@ class Clustering:
         return x, y
 
     def predict_groups(self, bounding_boxes: list[Bounding_Box]):
+        # if there are only a few boxes, treat them all as one text block, if there are more use k-means
+        if len(bounding_boxes) <= 3:
+            return bounding_boxes
+
         groups = []
         coordinates = np.array([self.get_box_center(box) for box in bounding_boxes])
-        k_values = range(2, 5)  # TODO: change back to (3, 15)
+
+        if len(coordinates) <= 5:
+            min_k_value = 2
+            max_k_value = 3
+        else:
+            min_k_value = 3
+            max_k_value = min(len(coordinates), 12)  # don't allow more than 12 text groups
+
+        k_values = range(min_k_value, max_k_value)
         silhouette_scores = []
 
         for k in k_values:
@@ -26,6 +38,7 @@ class Clustering:
             silhouette_scores.append(silhouette_score(coordinates, kmeans.labels_))
 
         optimal_k = k_values[silhouette_scores.index(max(silhouette_scores))]
+
         kmeans = KMeans(n_clusters=optimal_k, random_state=42, n_init='auto')  # TODO: test different n_init values
         kmeans.fit(coordinates)
 
