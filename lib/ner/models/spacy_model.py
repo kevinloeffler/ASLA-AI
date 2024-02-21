@@ -16,6 +16,7 @@ class SpacyModel(AbstractModel):
 
     def __init__(self, model_name: str = 'de_core_news_sm'):
         self.model_name = model_name
+        self.labels = ['O', 'CLT', 'LOC', 'MST', 'CLOC', 'DATE']
 
     ########## TRAINING ##########
 
@@ -29,7 +30,7 @@ class SpacyModel(AbstractModel):
         training_data = self.__convert_training_data(training_data)
         print('Start training spacy layout_model with:', len(training_data), 'datapoints')
 
-        for label in EntityLabel.__members__:
+        for label in self.labels:
             pipeline.add_label(label)
 
         # Disable pipeline components we dont want to change
@@ -77,7 +78,6 @@ class SpacyModel(AbstractModel):
         print(predicted_entities)
         return self.evaluate_prediction(fragment=fragment, predicted_entities=predicted_entities)
 
-
     def test(self, with_testing_csv: str, output_file: str, delimiter: str) -> list[PredictionResult]:
         if os.path.exists(output_file):
             print('ERROR: Output file already exists')
@@ -85,8 +85,10 @@ class SpacyModel(AbstractModel):
 
         results = []
         data = load_data(with_testing_csv, delimiter=delimiter)
+        data = self.__convert_training_data(data)
+        model = self.get_model()
         for datapoint in data:
-            results.append(self.predict(datapoint))
+            results.append(self.predict(model, datapoint))
 
         model_accuracy = sum([p.accuracy if p.accuracy else 0 for p in results]) / len(results)
 
@@ -137,5 +139,5 @@ class SpacyModel(AbstractModel):
         model.to_disk(path + '_' + str(suffix))
 
     def get_model(self):
-        print(f'Loading layout_model: "{self.model_name}"')
+        print(f'Loading spacy model: "{self.model_name}"')
         return spacy.load(self.model_name)

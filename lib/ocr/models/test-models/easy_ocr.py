@@ -16,16 +16,19 @@ def draw_boxes(image: Image, boxes: list[list[int]], predictions: list[str]):
     font = ImageFont.load_default(size=28)
 
     for prediction, box in zip(predictions, boxes):
-        rect = box[0] + box[2]
-        print('rect:', rect)
-        draw.rectangle(rect, outline='red', width=3)
-        draw.text((box[0][0], box[1][1] - 32), text=prediction, fill='red', font=font)
+        try:
+            rect = box[0] + box[2]
+            print('rect:', rect)
+            draw.rectangle(rect, outline='red', width=3)
+            draw.text((box[0][0], box[1][1] - 32), text=prediction, fill='red', font=font)
+        except:
+            continue
 
     image.show()
     return image
 
 
-image = Image.open('../../../../data/ocr/mnu/MN_1388_5.jpg').convert('RGB')
+image = Image.open('../../../../data/ocr/demo-images/KLA_6678_00002.JPG').convert('RGB')
 
 reader = easyocr.Reader(['de'])
 result = reader.readtext(np.array(image), paragraph=False)

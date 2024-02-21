@@ -1,6 +1,5 @@
 import tomli
 
-from scripts.evaluate_spacy import evaluate_spacy
 
 if __name__ == '__main__':
     # config = None
@@ -22,10 +21,22 @@ if __name__ == '__main__':
             print('ERROR: missing config key: number_of_gpus')
 
     # train_spacy(config=config)
-    evaluate_spacy(config=config)
+    # evaluate_spacy(config=config)
     # train_transformer_model(config=config)
     # evaluate_transformer_model(config=config)
 
+    #'''
+    from lib.ner.architecture import Fragment
+    from lib.ner.models.transformer_model import TransformerModel
+
+    model = TransformerModel(model_type='bert',
+                             model_name=config['paths']['models'] + 'ner/german-bert-500',
+                             numbers_of_gpus=config['number_of_gpus'],
+                             training_iterations=1,
+                             gpu_id=config['gpu_id'],
+                             safe_to='')
+    model.predict(Fragment(text='Thuyahecke ) dahlier Herbst. stauden. kompost. s. abdeckery. zurich, 10. Nov. 1945. samling. plan. -NR. 3568', entities=[]))
+    #'''
     '''
     from lib.ner.architecture import Fragment
     from lib.ner.models.spacy_model import SpacyModel
@@ -34,25 +45,22 @@ if __name__ == '__main__':
     model = spacy.get_model()
     spacy.predict(model, Fragment(text='archiv. fur. die. schweizer. Gartenarchitektur und. landschaftsplanung Rapperswil. sg. Nachlass. ernst. cramer. Norveys own history', entities=[]))
     '''
-
     '''
     from lib.ner.architecture import Fragment
     from lib.ner.models.transformer_model import TransformerModel
 
-    model = TransformerModel(model_type='roberta',
-                             model_name=config['paths']['models'] + 'ner/trf_roberta_4',
+    model = TransformerModel(model_type='bert',
+                             model_name=config['paths']['models'] + 'ner/german-bert-500',
                              numbers_of_gpus=config['number_of_gpus'],
                              training_iterations=1,
+                             safe_to='',
                              gpu_id=config['gpu_id'])
-    model.predict(Fragment(text='klosterhof. wettingen. hofeinblick no. # 20 1949', entities=[]))
-    model.predict(Fragment(text='archiv. fur. bile. schweizer. Gartenarchitektur und. landschaftsplanung rapperswil. sq. sammlung. mertens,n. " September', entities=[]))
-    model.predict(Fragment(text='mertens. thussbauer Gartchurch. bsg. swb.', entities=[]))
-    model.predict(Fragment(text='klosterhof. wettingen. m. 1; 100, projekt. zur. umgestaltung des. hofes.', entities=[]))
-    model.predict(Fragment(text='zurich 16. 2.49. plan. no, #419 "', entities=[]))
-    model.predict(Fragment(text='mertens # Nussbaumef gartenarch. b"s.g. f', entities=[]))
-    model.predict(Fragment(text='archiv. fur. die. schweizer. gartenarchitektur. und. landschaftsplanung rapperswil. sg. sammlung. mertens Nussbaumer', entities=[]))
-    model.predict(Fragment(text='1940s 1934 1907 1939 References THEA E. the first of a number of # Eisenhaq # # umgestell 0 0 1940s. 36.30 30. 0. 0 0 1907 1903 s. this Deckstraucher 0. 1961. to irri Brutenstand. 0 : ri- sci. # # 95 0 0 1907 08 57 " 53 " 4tho. \' 354-97. 1907 08 1907 1910 sion. 5 1 transiting 0 States 1907 0 0 Obstspaliere. ofavor. k. kirchenkrauter it 0 0 The 0 0 Prockenmal auer. s # # 0 0 0 0 0 0 0 Gebrider Mertens p 0 0 Gartenarchitekten B.S.G. Seyman\'s 1934 0 0 It is', entities=[]))
-    model.predict(Fragment(text='Garten zum. Pfarrhaus Herrliberg. Norden 0 0 0 4tho Wiese mit. Obstbaumen archiv. IDECHAFTSPIL Rappers Wil SG... sameung Martens, Nussbaumer', entities=[]))
+    model.predict(Fragment(text='larus. zurigh in- it- r. 2. 8 2. der. gartenarch.', entities=[]))
+    model.predict(Fragment(text='drell. istraire.', entities=[]))
+    model.predict(Fragment(text='0. e. Horizontalen.', entities=[]))
+    model.predict(Fragment(text='das. landhausgebiet. gesamplan 1,500 stand. Der-bebauung-Herbst 1928.', entities=[]))
+    model.predict(Fragment(text='susenbergstrasse masstab. 1 : 500 40 50. 60. 90. 100 m.', entities=[]))
+    model.predict(Fragment(text='gruman', entities=[]))
     '''
 
     # OCR

@@ -1,4 +1,4 @@
-from transformers import LayoutLMv2Processor
+from transformers import LayoutXLMProcessor
 from PIL import Image, ImageDraw, ImageFont
 
 # image = Image.open('../../../data/ocr/mnu/MN_1388_3.jpg').convert("RGB")
@@ -42,9 +42,9 @@ def run_inference(path, processor):
 
 def load_model(path):
     print('loading layout_model...')
-    return LayoutLMv2Processor.from_pretrained(path)
+    return LayoutXLMProcessor.from_pretrained(path)
 
 
-processor = load_model('microsoft/layoutlmv2-base-uncased')
-run_inference('../../../../data/ocr/demo-images/MN_1654_1.jpg', processor)
+processor = load_model('microsoft/layoutxlm-base')
+run_inference('../../../../data/ocr/demo-images/KLA_6678_00002.JPG', processor)
 

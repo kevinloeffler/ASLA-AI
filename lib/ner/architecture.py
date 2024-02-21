@@ -6,7 +6,6 @@ from enum import Enum
 
 
 class EntityLabel(Enum):
-    # OLD ENTITIES:
     CLT = 'Client',
     LOC = 'Location',
     MST = 'Scale',

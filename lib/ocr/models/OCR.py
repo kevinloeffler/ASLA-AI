@@ -51,7 +51,8 @@ class OCR:
         prediction = []
         for group in ordered_boxes:
             predictions = [self.__predict_text(box, image) for box in group]
-            prediction.append(' '.join(predictions))
+            clean_predictions = list(filter(lambda p: p is not None, predictions))
+            prediction.append(' '.join(clean_predictions))
 
         print(timer.stop(as_string=True) + 's')
 
@@ -119,7 +120,7 @@ class OCR:
             sorted_boxes += sorted_row
         return sorted_boxes
 
-    def __predict_text(self, box: BoundingBox, image: Image):
+    def __predict_text(self, box: BoundingBox, image: Image) -> str | None:
         resized_box = self.__resize_bounding_box(box, by=10, image_size=image.size)
         masked_image = image.crop(resized_box)
         return self.ocr_model.predict(masked_image)
